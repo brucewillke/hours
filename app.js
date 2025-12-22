@@ -14,8 +14,11 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMainNav();
     initTraditionTabs();
     initTopicTabs();
+    initPsalterTabs();
+    initPsalter();
     restoreState();
     setInitialBackground();
     initLiturgicalDisplay();
@@ -408,4 +411,163 @@ function initCollapsiblePrayers() {
             prayer.classList.toggle('collapsed');
         });
     });
+}
+
+// Handle main navigation (Prayer Book / Psalter)
+function initMainNav() {
+    const mainNavTabs = document.querySelectorAll('.main-nav-tab');
+
+    mainNavTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const section = this.dataset.section;
+
+            // Update active tab
+            mainNavTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update visible section
+            document.querySelectorAll('.main-section').forEach(s => {
+                s.classList.remove('active');
+            });
+            document.getElementById(section + '-section').classList.add('active');
+
+            // Save state
+            localStorage.setItem('hours-main-section', section);
+        });
+    });
+
+    // Restore saved section
+    const savedSection = localStorage.getItem('hours-main-section');
+    if (savedSection) {
+        const tab = document.querySelector(`.main-nav-tab[data-section="${savedSection}"]`);
+        if (tab) {
+            tab.click();
+        }
+    }
+}
+
+// Current psalter numbering mode
+let currentNumbering = 'masoretic';
+
+// Handle psalter tabs (Masoretic / Septuagint)
+function initPsalterTabs() {
+    const psalterTabs = document.querySelectorAll('.psalter-tab');
+
+    psalterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const numbering = this.dataset.numbering;
+
+            // Update active tab
+            psalterTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update numbering mode and re-render
+            currentNumbering = numbering;
+            renderPsalms();
+
+            // Save state
+            localStorage.setItem('hours-psalter-numbering', numbering);
+        });
+    });
+
+    // Restore saved numbering
+    const savedNumbering = localStorage.getItem('hours-psalter-numbering');
+    if (savedNumbering) {
+        currentNumbering = savedNumbering;
+        const tab = document.querySelector(`.psalter-tab[data-numbering="${savedNumbering}"]`);
+        if (tab) {
+            tab.classList.add('active');
+            document.querySelector('.psalter-tab.active')?.classList.remove('active');
+            tab.classList.add('active');
+        }
+    }
+}
+
+// Initialize the Psalter
+function initPsalter() {
+    // Populate the psalm select dropdown
+    const select = document.getElementById('psalm-select');
+    if (select && typeof PSALMS !== 'undefined') {
+        PSALMS.forEach(psalm => {
+            const option = document.createElement('option');
+            option.value = psalm.number;
+            option.textContent = `Psalm ${psalm.number}`;
+            select.appendChild(option);
+        });
+
+        select.addEventListener('change', function() {
+            const psalmNum = parseInt(this.value);
+            scrollToPsalm(psalmNum);
+        });
+    }
+
+    // Render the psalms
+    renderPsalms();
+}
+
+// Render all psalms
+function renderPsalms() {
+    const container = document.getElementById('psalms-container');
+    if (!container || typeof PSALMS === 'undefined') return;
+
+    let html = '';
+
+    PSALMS.forEach(psalm => {
+        const displayNumber = currentNumbering === 'masoretic'
+            ? psalm.number
+            : psalm.lxxNumber;
+
+        const title = currentNumbering === 'masoretic'
+            ? `Psalm ${psalm.number}`
+            : `Psalm ${psalm.lxxNumber}`;
+
+        const lxxNote = currentNumbering === 'septuagint' && psalm.lxxNumber !== String(psalm.number)
+            ? `<span class="psalm-lxx-note">(MT ${psalm.number})</span>`
+            : '';
+
+        html += `
+            <article class="psalm collapsed" data-psalm="${psalm.number}" id="psalm-${psalm.number}">
+                <h3>${title}${lxxNote}</h3>
+                <div class="psalm-body">
+                    <p class="psalm-text">${psalm.text.replace(/\\n/g, '\n')}</p>
+                </div>
+            </article>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    // Add click handlers for collapsible psalms
+    container.querySelectorAll('.psalm h3').forEach(title => {
+        title.addEventListener('click', function() {
+            this.closest('.psalm').classList.toggle('collapsed');
+        });
+    });
+
+    // Update the select dropdown
+    const select = document.getElementById('psalm-select');
+    if (select) {
+        Array.from(select.options).forEach((option, index) => {
+            if (index > 0) {
+                const psalmNum = parseInt(option.value);
+                const psalm = PSALMS.find(p => p.number === psalmNum);
+                if (psalm) {
+                    option.textContent = currentNumbering === 'masoretic'
+                        ? `Psalm ${psalm.number}`
+                        : `Psalm ${psalm.lxxNumber}`;
+                }
+            }
+        });
+    }
+}
+
+// Scroll to a specific psalm
+function scrollToPsalm(num) {
+    const psalmEl = document.getElementById(`psalm-${num}`);
+    if (psalmEl) {
+        // Expand the psalm
+        psalmEl.classList.remove('collapsed');
+        // Scroll to it
+        psalmEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }

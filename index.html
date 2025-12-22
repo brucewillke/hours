@@ -48,13 +48,19 @@
         </audio>
     </header>
 
-    <nav class="tradition-tabs">
-        <button class="tradition-tab active" data-tradition="catholic">Catholic</button>
-        <button class="tradition-tab" data-tradition="byzantine">Byzantine</button>
-        <button class="tradition-tab" data-tradition="protestant">Protestant</button>
+    <nav class="main-nav">
+        <button class="main-nav-tab active" data-section="prayers">Prayer Book</button>
+        <button class="main-nav-tab" data-section="psalter">Psalter</button>
     </nav>
 
-    <main>
+    <div id="prayers-section" class="main-section active">
+        <nav class="tradition-tabs">
+            <button class="tradition-tab active" data-tradition="catholic">Catholic</button>
+            <button class="tradition-tab" data-tradition="byzantine">Byzantine</button>
+            <button class="tradition-tab" data-tradition="protestant">Protestant</button>
+        </nav>
+
+        <main>
         <!-- Catholic Tradition -->
         <section class="tradition-content active" id="catholic">
             <nav class="topic-tabs">
@@ -1288,13 +1294,35 @@
                 </article>
             </div>
         </section>
-    </main>
+        </main>
+    </div>
+
+    <div id="psalter-section" class="main-section">
+        <main>
+            <nav class="psalter-tabs">
+                <button class="psalter-tab active" data-numbering="masoretic">Masoretic (Hebrew)</button>
+                <button class="psalter-tab" data-numbering="septuagint">Septuagint (Greek)</button>
+            </nav>
+
+            <div class="psalter-intro">
+                <p>The Book of Psalms contains 150 sacred songs and prayers. The <strong>Masoretic</strong> numbering follows the Hebrew text tradition, while the <strong>Septuagint</strong> numbering follows the Greek translation used in Orthodox and Catholic traditions.</p>
+            </div>
+
+            <div class="psalm-navigation">
+                <label for="psalm-select">Go to Psalm:</label>
+                <select id="psalm-select"></select>
+            </div>
+
+            <div id="psalms-container"></div>
+        </main>
+    </div>
 
     <footer>
         <p>Hours — A Book of Prayers for the Church</p>
     </footer>
 
     <script src="liturgical.js"></script>
+    <script src="psalms.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

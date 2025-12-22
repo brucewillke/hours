@@ -1,11 +1,12 @@
 // Service Worker for Hours Prayer App
-const CACHE_NAME = 'hours-v1';
+const CACHE_NAME = 'hours-v2';
 const urlsToCache = [
   '/hours/',
   '/hours/index.html',
   '/hours/styles.css',
   '/hours/app.js',
   '/hours/liturgical.js',
+  '/hours/psalms.js',
   '/hours/manifest.json',
   '/hours/audio/gregorian.mp3',
   '/hours/audio/orthodox.mp3',
