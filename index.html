@@ -15,163 +15,34 @@
         <p class="subtitle">A Book of Prayers</p>
         <div id="season-banner" class="season-banner">Loading...</div>
         <div id="office-banner" class="office-banner"></div>
+        <div class="music-controls">
+            <button id="music-toggle" class="music-btn" aria-label="Play sacred music">
+                <span class="music-icon">&#9835;</span>
+                <span class="music-label">Play Chant</span>
+            </button>
+            <select id="music-select" class="music-select">
+                <option value="gregorian">Gregorian Chant</option>
+                <option value="orthodox">Orthodox Chant</option>
+                <option value="organ">Organ Music</option>
+            </select>
+        </div>
+        <audio id="ambient-audio" loop>
+            <source id="audio-source" src="" type="audio/mpeg">
+        </audio>
     </header>
 
     <nav class="tradition-tabs">
-        <button class="tradition-tab active" data-tradition="office">Daily Office</button>
-        <button class="tradition-tab" data-tradition="catholic">Catholic</button>
+        <button class="tradition-tab active" data-tradition="catholic">Catholic</button>
         <button class="tradition-tab" data-tradition="byzantine">Byzantine</button>
         <button class="tradition-tab" data-tradition="protestant">Protestant</button>
     </nav>
 
     <main>
-        <!-- Daily Office -->
-        <section class="tradition-content active" id="office">
-            <nav class="topic-tabs office-tabs">
-                <button class="topic-tab office-tab active" data-topic="office-current" data-office="current">Current Hour</button>
-                <button class="topic-tab office-tab" data-topic="office-lauds" data-office="LAUDS">Lauds</button>
-                <button class="topic-tab office-tab" data-topic="office-terce" data-office="TERCE">Terce</button>
-                <button class="topic-tab office-tab" data-topic="office-sext" data-office="SEXT">Sext</button>
-                <button class="topic-tab office-tab" data-topic="office-none" data-office="NONE">None</button>
-                <button class="topic-tab office-tab" data-topic="office-vespers" data-office="VESPERS">Vespers</button>
-                <button class="topic-tab office-tab" data-topic="office-compline" data-office="COMPLINE">Compline</button>
-            </nav>
-
-            <div class="topic-content active" id="office-current">
-                <div class="office-intro">
-                    <p>The Liturgy of the Hours sanctifies the day through prayer at set times. The current hour's prayers are shown below, with seasonal prayers appropriate for this time in the church year.</p>
-                </div>
-                <div id="seasonal-prayers" class="seasonal-prayers"></div>
-                <div id="office-prayers" class="office-prayers"></div>
-            </div>
-
-            <div class="topic-content" id="office-lauds">
-                <article class="prayer">
-                    <h3>Lauds (Morning Prayer)</h3>
-                    <p class="prayer-text">Prayed at dawn, Lauds celebrates the resurrection of Christ and the new light of day.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Invitatory</h3>
-                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen. Alleluia.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 63 (Deus, Deus meus)</h3>
-                    <p class="prayer-text">O God, you are my God; eagerly I seek you;<br>my soul thirsts for you, my flesh faints for you,<br>as in a barren and dry land where there is no water.<br><br>Therefore I have gazed upon you in your holy place,<br>that I might behold your power and your glory.<br><br>For your loving-kindness is better than life itself;<br>my lips shall give you praise.<br><br>So will I bless you as long as I live<br>and lift up my hands in your Name.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Benedictus (Song of Zechariah)</h3>
-                    <p class="prayer-text">Blessed be the Lord, the God of Israel;<br>he has come to his people and set them free.<br><br>He has raised up for us a mighty savior,<br>born of the house of his servant David.<br><br>Through his holy prophets he promised of old,<br>that he would save us from our enemies,<br>from the hands of all who hate us.<br><br>He promised to show mercy to our fathers<br>and to remember his holy covenant.</p>
-                </article>
-            </div>
-
-            <div class="topic-content" id="office-terce">
-                <article class="prayer">
-                    <h3>Terce (Mid-Morning Prayer)</h3>
-                    <p class="prayer-text">Prayed at the third hour (9 AM), commemorating the descent of the Holy Spirit at Pentecost.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Invitatory</h3>
-                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Hymn: Veni Creator Spiritus</h3>
-                    <p class="prayer-text">Come, Holy Ghost, Creator blest,<br>and in our hearts take up Your rest;<br>come with Your grace and heavenly aid<br>to fill the hearts which You have made.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 119:33-40</h3>
-                    <p class="prayer-text">Teach me, O Lord, the way of your statutes,<br>and I shall keep it to the end.<br><br>Give me understanding, and I shall keep your law;<br>I shall keep it with all my heart.<br><br>Make me go in the path of your commandments,<br>for that is my desire.<br><br>Incline my heart to your decrees<br>and not to unjust gain.</p>
-                </article>
-            </div>
-
-            <div class="topic-content" id="office-sext">
-                <article class="prayer">
-                    <h3>Sext (Midday Prayer)</h3>
-                    <p class="prayer-text">Prayed at the sixth hour (noon), when Christ was nailed to the cross and darkness covered the land.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Invitatory</h3>
-                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 119:105-112</h3>
-                    <p class="prayer-text">Your word is a lantern to my feet<br>and a light upon my path.<br><br>I have sworn and am determined<br>to keep your righteous judgments.<br><br>I am deeply troubled;<br>preserve my life, O Lord, according to your word.<br><br>Accept, O Lord, the willing tribute of my lips,<br>and teach me your judgments.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Closing Prayer</h3>
-                    <p class="prayer-text">Blessed are you, O Lord, the God of our fathers, creator of the changes of day and night, giving rest to the weary, renewing the strength of those who are spent, bestowing upon us occasions of song in the evening. As you have protected us in the day that is past, so be with us in the coming night; keep us from every sin, every evil, and every fear; for you are our light and salvation, and the strength of our life. Amen.</p>
-                </article>
-            </div>
-
-            <div class="topic-content" id="office-none">
-                <article class="prayer">
-                    <h3>None (Mid-Afternoon Prayer)</h3>
-                    <p class="prayer-text">Prayed at the ninth hour (3 PM), the hour of Christ's death on the cross.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Invitatory</h3>
-                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 121</h3>
-                    <p class="prayer-text">I lift up my eyes to the hills;<br>from where is my help to come?<br><br>My help comes from the Lord,<br>the maker of heaven and earth.<br><br>He will not let your foot be moved<br>and he who watches over you will not fall asleep.<br><br>Behold, he who keeps watch over Israel<br>shall neither slumber nor sleep.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Closing Prayer</h3>
-                    <p class="prayer-text">Lord Jesus Christ, at this hour you mounted the wood of the cross for our salvation. Grant that the light of your love may so enlighten our hearts, that we may willingly die to the world and live for you alone, who with the Father and the Holy Spirit lives and reigns, one God, for ever and ever. Amen.</p>
-                </article>
-            </div>
-
-            <div class="topic-content" id="office-vespers">
-                <article class="prayer">
-                    <h3>Vespers (Evening Prayer)</h3>
-                    <p class="prayer-text">Prayed at sunset, Vespers gives thanks for the day and welcomes the light of Christ that shines in the darkness.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Phos Hilaron (O Gladsome Light)</h3>
-                    <p class="prayer-text">O gracious Light,<br>pure brightness of the everliving Father in heaven,<br>O Jesus Christ, holy and blessed!<br><br>Now as we come to the setting of the sun,<br>and our eyes behold the vesper light,<br>we sing your praises, O God: Father, Son, and Holy Spirit.<br><br>You are worthy at all times to be praised by happy voices,<br>O Son of God, O Giver of life,<br>and to be glorified through all the worlds.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 141</h3>
-                    <p class="prayer-text">Lord, I call upon you; hasten to me;<br>give ear to my voice when I call to you.<br><br>Let my prayer be set forth in your sight as incense,<br>the lifting up of my hands as the evening sacrifice.<br><br>Set a watch before my mouth, O Lord,<br>and guard the door of my lips.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Magnificat (Song of Mary)</h3>
-                    <p class="prayer-text">My soul magnifies the Lord,<br>and my spirit rejoices in God my Savior,<br>for he has looked with favor on the lowliness of his servant.<br><br>Surely, from now on all generations will call me blessed;<br>for the Mighty One has done great things for me,<br>and holy is his Name.<br><br>He has shown strength with his arm;<br>he has scattered the proud in the thoughts of their hearts.</p>
-                </article>
-            </div>
-
-            <div class="topic-content" id="office-compline">
-                <article class="prayer">
-                    <h3>Compline (Night Prayer)</h3>
-                    <p class="prayer-text">The final prayer of the day, Compline commends the soul to God before sleep.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Confession</h3>
-                    <p class="prayer-text">I confess to almighty God,<br>and to you, my brothers and sisters,<br>that I have sinned through my own fault,<br>in my thoughts and in my words,<br>in what I have done and what I have failed to do;<br>and I ask blessed Mary, ever virgin,<br>all the angels and saints,<br>and you, my brothers and sisters,<br>to pray for me to the Lord our God.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Psalm 91</h3>
-                    <p class="prayer-text">He who dwells in the shelter of the Most High,<br>abides under the shadow of the Almighty.<br><br>He shall say to the Lord, "You are my refuge and my stronghold,<br>my God in whom I put my trust."<br><br>He shall deliver you from the snare of the hunter<br>and from the deadly pestilence.<br><br>He shall cover you with his pinions,<br>and you shall find refuge under his wings;<br>his faithfulness shall be a shield and buckler.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Nunc Dimittis (Song of Simeon)</h3>
-                    <p class="prayer-text">Lord, you now have set your servant free<br>to go in peace as you have promised;<br><br>For these eyes of mine have seen the Savior,<br>whom you have prepared for all the world to see:<br><br>A Light to enlighten the nations,<br>and the glory of your people Israel.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Antiphon</h3>
-                    <p class="prayer-text">Guide us waking, O Lord, and guard us sleeping; that awake we may watch with Christ, and asleep we may rest in peace.</p>
-                </article>
-                <article class="prayer">
-                    <h3>Closing</h3>
-                    <p class="prayer-text">Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon all who dwell here; through Jesus Christ our Lord. Amen.<br><br>The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.</p>
-                </article>
-            </div>
-        </section>
-
         <!-- Catholic Tradition -->
-        <section class="tradition-content" id="catholic">
+        <section class="tradition-content active" id="catholic">
             <nav class="topic-tabs">
-                <button class="topic-tab active" data-topic="catholic-grieving">Grieving</button>
+                <button class="topic-tab active" data-topic="catholic-hours">Liturgy of the Hours</button>
+                <button class="topic-tab" data-topic="catholic-grieving">Grieving</button>
                 <button class="topic-tab" data-topic="catholic-illness">Illness of a Child</button>
                 <button class="topic-tab" data-topic="catholic-departed">For the Departed</button>
                 <button class="topic-tab" data-topic="catholic-lust">Against Lust</button>
@@ -181,7 +52,81 @@
                 <button class="topic-tab" data-topic="catholic-evening">Evening Prayers</button>
             </nav>
 
-            <div class="topic-content active" id="catholic-grieving">
+            <div class="topic-content active" id="catholic-hours">
+                <div class="office-intro">
+                    <p>The Liturgy of the Hours (Divine Office) sanctifies the day through prayer at set times, uniting the Church in continuous praise. These prayers follow the Roman Breviary tradition.</p>
+                    <p id="catholic-current-hour" class="current-hour-indicator"></p>
+                </div>
+
+                <article class="prayer">
+                    <h3>Lauds (Morning Prayer) — 6:00 AM</h3>
+                    <h4>Invitatory</h4>
+                    <p class="prayer-text">Lord, open my lips.<br>And my mouth will proclaim your praise.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen. Alleluia.</p>
+                    <h4>Psalm 95 (Venite)</h4>
+                    <p class="prayer-text">Come, let us sing to the Lord;<br>let us shout for joy to the Rock of our salvation.<br>Let us come before his presence with thanksgiving<br>and raise a loud shout to him with psalms.<br><br>For the Lord is a great God,<br>and a great King above all gods.<br>In his hand are the caverns of the earth,<br>and the heights of the hills are his also.<br>The sea is his, for he made it,<br>and his hands have molded the dry land.</p>
+                    <h4>Psalm 63 (Deus, Deus meus)</h4>
+                    <p class="prayer-text">O God, you are my God; eagerly I seek you;<br>my soul thirsts for you, my flesh faints for you,<br>as in a barren and dry land where there is no water.<br><br>Therefore I have gazed upon you in your holy place,<br>that I might behold your power and your glory.<br>For your loving-kindness is better than life itself;<br>my lips shall give you praise.<br><br>So will I bless you as long as I live<br>and lift up my hands in your Name.<br>My soul is content, as with marrow and fatness,<br>and my mouth praises you with joyful lips.</p>
+                    <h4>Benedictus (Canticle of Zechariah — Luke 1:68-79)</h4>
+                    <p class="prayer-text">Blessed be the Lord, the God of Israel;<br>he has come to his people and set them free.<br>He has raised up for us a mighty savior,<br>born of the house of his servant David.<br><br>Through his holy prophets he promised of old,<br>that he would save us from our enemies,<br>from the hands of all who hate us.<br>He promised to show mercy to our fathers<br>and to remember his holy covenant.<br><br>This was the oath he swore to our father Abraham,<br>to set us free from the hands of our enemies,<br>free to worship him without fear,<br>holy and righteous in his sight all the days of our life.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Terce (Mid-Morning Prayer) — 9:00 AM</h3>
+                    <h4>Hymn: Veni Creator Spiritus</h4>
+                    <p class="prayer-text">Come, Holy Ghost, Creator blest,<br>and in our hearts take up your rest;<br>come with your grace and heavenly aid<br>to fill the hearts which you have made.<br><br>O Comforter, to you we cry,<br>the heavenly gift of God Most High;<br>the fount of life and fire of love,<br>and sweet anointing from above.</p>
+                    <h4>Psalm 119:33-40</h4>
+                    <p class="prayer-text">Teach me, O Lord, the way of your statutes,<br>and I shall keep it to the end.<br>Give me understanding, and I shall keep your law;<br>I shall keep it with all my heart.<br><br>Make me go in the path of your commandments,<br>for that is my desire.<br>Incline my heart to your decrees<br>and not to unjust gain.<br>Turn my eyes from watching what is worthless;<br>give me life in your ways.</p>
+                    <h4>Acts 2:1-4 (Pentecost Reading)</h4>
+                    <p class="prayer-text">When the day of Pentecost had come, they were all together in one place. And suddenly from heaven there came a sound like the rush of a violent wind, and it filled the entire house where they were sitting. Divided tongues, as of fire, appeared among them, and a tongue rested on each of them. All of them were filled with the Holy Spirit and began to speak in other languages, as the Spirit gave them ability.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Sext (Midday Prayer) — 12:00 PM</h3>
+                    <h4>Invitatory</h4>
+                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit.</p>
+                    <h4>Psalm 119:105-112</h4>
+                    <p class="prayer-text">Your word is a lantern to my feet<br>and a light upon my path.<br>I have sworn and am determined<br>to keep your righteous judgments.<br><br>I am deeply troubled;<br>preserve my life, O Lord, according to your word.<br>Accept, O Lord, the willing tribute of my lips,<br>and teach me your judgments.</p>
+                    <h4>Psalm 122</h4>
+                    <p class="prayer-text">I was glad when they said to me,<br>"Let us go to the house of the Lord."<br>Now our feet are standing<br>within your gates, O Jerusalem.<br><br>For the sake of my relatives and friends<br>I will say, "Peace be within you."<br>For the sake of the house of the Lord our God,<br>I will seek your good.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>None (Mid-Afternoon Prayer) — 3:00 PM</h3>
+                    <p class="prayer-intro">The ninth hour, when Christ died on the cross.</p>
+                    <h4>Psalm 121</h4>
+                    <p class="prayer-text">I lift up my eyes to the hills;<br>from where is my help to come?<br>My help comes from the Lord,<br>the maker of heaven and earth.<br><br>He will not let your foot be moved<br>and he who watches over you will not fall asleep.<br>Behold, he who keeps watch over Israel<br>shall neither slumber nor sleep.<br><br>The Lord himself watches over you;<br>the Lord is your shade at your right hand,<br>so that the sun shall not strike you by day,<br>nor the moon by night.</p>
+                    <h4>Luke 23:44-46</h4>
+                    <p class="prayer-text">It was now about noon, and darkness came over the whole land until three in the afternoon, while the sun's light failed; and the curtain of the temple was torn in two. Then Jesus, crying with a loud voice, said, "Father, into your hands I commend my spirit." Having said this, he breathed his last.</p>
+                    <h4>Closing Prayer</h4>
+                    <p class="prayer-text">Lord Jesus Christ, at this hour you mounted the wood of the cross for our salvation. Grant that the light of your love may so enlighten our hearts, that we may willingly die to the world and live for you alone, who with the Father and the Holy Spirit lives and reigns, one God, for ever and ever. Amen.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Vespers (Evening Prayer) — 6:00 PM</h3>
+                    <h4>Lucernarium (Lighting of the Lamp)</h4>
+                    <p class="prayer-text">Light and peace in Jesus Christ our Lord.<br>Thanks be to God.</p>
+                    <h4>Psalm 141</h4>
+                    <p class="prayer-text">Lord, I call upon you; hasten to me;<br>give ear to my voice when I call to you.<br>Let my prayer be set forth in your sight as incense,<br>the lifting up of my hands as the evening sacrifice.<br><br>Set a watch before my mouth, O Lord,<br>and guard the door of my lips;<br>let not my heart incline to any evil thing.<br>Let me not be occupied in wickedness with evildoers.</p>
+                    <h4>Magnificat (Canticle of Mary — Luke 1:46-55)</h4>
+                    <p class="prayer-text">My soul magnifies the Lord,<br>and my spirit rejoices in God my Savior,<br>for he has looked with favor on the lowliness of his servant.<br>Surely, from now on all generations will call me blessed;<br><br>for the Mighty One has done great things for me,<br>and holy is his Name.<br>He has mercy on those who fear him<br>in every generation.<br><br>He has shown the strength of his arm,<br>he has scattered the proud in their conceit.<br>He has cast down the mighty from their thrones,<br>and has lifted up the lowly.<br>He has filled the hungry with good things,<br>and the rich he has sent away empty.<br><br>He has come to the help of his servant Israel,<br>for he has remembered his promise of mercy,<br>the promise he made to our fathers,<br>to Abraham and his children for ever.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Compline (Night Prayer) — 9:00 PM</h3>
+                    <h4>Examination of Conscience</h4>
+                    <p class="prayer-text">I confess to almighty God,<br>and to you, my brothers and sisters,<br>that I have greatly sinned,<br>in my thoughts and in my words,<br>in what I have done and in what I have failed to do,<br>through my fault, through my fault, through my most grievous fault;<br>therefore I ask blessed Mary ever-Virgin,<br>all the Angels and Saints,<br>and you, my brothers and sisters,<br>to pray for me to the Lord our God.</p>
+                    <h4>Psalm 91</h4>
+                    <p class="prayer-text">He who dwells in the shelter of the Most High,<br>abides under the shadow of the Almighty.<br>He shall say to the Lord, "You are my refuge and my stronghold,<br>my God in whom I put my trust."<br><br>He shall deliver you from the snare of the hunter<br>and from the deadly pestilence.<br>He shall cover you with his pinions,<br>and you shall find refuge under his wings;<br>his faithfulness shall be a shield and buckler.<br><br>You shall not be afraid of any terror by night,<br>nor of the arrow that flies by day;<br>of the plague that stalks in the darkness,<br>nor of the sickness that lays waste at mid-day.</p>
+                    <h4>Nunc Dimittis (Canticle of Simeon — Luke 2:29-32)</h4>
+                    <p class="prayer-text">Lord, now you let your servant go in peace;<br>your word has been fulfilled:<br>my own eyes have seen the salvation<br>which you have prepared in the sight of every people:<br>a light to reveal you to the nations<br>and the glory of your people Israel.</p>
+                    <h4>Marian Antiphon: Salve Regina</h4>
+                    <p class="prayer-text">Hail, holy Queen, Mother of Mercy,<br>our life, our sweetness and our hope.<br>To you do we cry, poor banished children of Eve;<br>to you do we send up our sighs,<br>mourning and weeping in this valley of tears.<br><br>Turn then, most gracious advocate,<br>your eyes of mercy toward us,<br>and after this our exile,<br>show unto us the blessed fruit of your womb, Jesus.<br>O clement, O loving, O sweet Virgin Mary.</p>
+                    <h4>Final Blessing</h4>
+                    <p class="prayer-text">Visit, we beseech you, O Lord, this dwelling, and drive far from it all snares of the enemy. Let your holy angels dwell within it to preserve us in peace; and let your blessing be upon all who dwell herein, through Jesus Christ our Lord. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-grieving">
                 <article class="prayer">
                     <h3>Prayer for Those Who Mourn</h3>
                     <p class="prayer-text">O God, who brought us to birth, and in whose arms we die, in our grief and shock contain and comfort us; embrace us with your love, give us hope in our confusion, and grace to let go into new life; through Jesus Christ our Lord. Amen.</p>
@@ -401,7 +346,8 @@
         <!-- Byzantine Tradition -->
         <section class="tradition-content" id="byzantine">
             <nav class="topic-tabs">
-                <button class="topic-tab active" data-topic="byzantine-grieving">Grieving</button>
+                <button class="topic-tab active" data-topic="byzantine-hours">The Hours</button>
+                <button class="topic-tab" data-topic="byzantine-grieving">Grieving</button>
                 <button class="topic-tab" data-topic="byzantine-illness">Illness of a Child</button>
                 <button class="topic-tab" data-topic="byzantine-departed">For the Departed</button>
                 <button class="topic-tab" data-topic="byzantine-lust">Against Lust</button>
@@ -411,7 +357,93 @@
                 <button class="topic-tab" data-topic="byzantine-evening">Evening Prayers</button>
             </nav>
 
-            <div class="topic-content active" id="byzantine-grieving">
+            <div class="topic-content active" id="byzantine-hours">
+                <div class="office-intro">
+                    <p>The Hours (Horologion) are the daily cycle of prayer in the Byzantine tradition, sanctifying each part of the day. These prayers follow the Orthodox practice.</p>
+                    <p id="byzantine-current-hour" class="current-hour-indicator"></p>
+                </div>
+
+                <article class="prayer">
+                    <h3>Orthros (Matins/Morning Prayer) — Dawn</h3>
+                    <h4>Opening Prayers</h4>
+                    <p class="prayer-text">Glory to You, O God, glory to You.<br><br>O Heavenly King, Comforter, Spirit of Truth, Who are everywhere present and fill all things, Treasury of good things and Giver of life: Come and dwell in us, cleanse us from every stain, and save our souls, O Good One.</p>
+                    <h4>Trisagion Prayers</h4>
+                    <p class="prayer-text">Holy God, Holy Mighty, Holy Immortal, have mercy on us. (3x)<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.<br><br>O Most Holy Trinity, have mercy on us. Lord, cleanse us of our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Your name's sake.</p>
+                    <h4>Psalm 50 (51) — The Great Penitential Psalm</h4>
+                    <p class="prayer-text">Have mercy on me, O God, according to Your great mercy;<br>and according to the multitude of Your compassions blot out my transgression.<br>Wash me thoroughly from my iniquity, and cleanse me from my sin.<br><br>For I know my iniquity, and my sin is ever before me.<br>Against You only have I sinned and done evil in Your sight,<br>that You might be justified in Your words and win when You are judged.<br><br>For behold, I was conceived in iniquities, and in sins did my mother bear me.<br>For behold, You have loved truth; the unknown and hidden things of Your wisdom You have made known to me.<br><br>You shall sprinkle me with hyssop, and I shall be cleansed;<br>You shall wash me, and I shall be whiter than snow.</p>
+                    <h4>Psalm 62 (63)</h4>
+                    <p class="prayer-text">O God, my God, to You I rise early at dawn.<br>My soul has thirsted for You; how often has my flesh longed for You<br>in a land barren and untrodden and unwatered.<br><br>So in the sanctuary have I appeared before You, to see Your power and Your glory.<br>For Your mercy is better than life; my lips shall praise You.<br>So shall I bless You in my life; in Your name shall I lift up my hands.</p>
+                    <h4>Great Doxology</h4>
+                    <p class="prayer-text">Glory to God in the highest, and on earth peace, good will among men.<br>We praise You, we bless You, we worship You, we glorify You, we give thanks to You for Your great glory.<br><br>O Lord, King, heavenly God, Father Almighty;<br>O Lord, the only-begotten Son, Jesus Christ, and Holy Spirit.<br>O Lord God, Lamb of God, Son of the Father, Who takes away the sin of the world, have mercy on us.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>First Hour — 6:00 AM</h3>
+                    <h4>Opening</h4>
+                    <p class="prayer-text">Come, let us worship God our King.<br>Come, let us worship and fall down before Christ, our King and God.<br>Come, let us worship and fall down before Christ Himself, our King and God.</p>
+                    <h4>Psalm 5</h4>
+                    <p class="prayer-text">Give ear to my words, O Lord; understand my cry.<br>Attend to the voice of my supplication, O my King and my God.<br>For to You will I pray, O Lord.<br><br>In the morning You shall hear my voice;<br>in the morning I shall stand before You, and You shall look upon me.<br>For You are not a God that wills iniquity, nor shall evil dwell with You.</p>
+                    <h4>Psalm 89 (90)</h4>
+                    <p class="prayer-text">Lord, You have been our refuge from generation to generation.<br>Before the mountains were brought forth,<br>or ever the earth and the world were made,<br>from everlasting to everlasting, You are God.<br><br>For a thousand years in Your sight are but as yesterday that is past,<br>and as a watch in the night.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Third Hour — 9:00 AM</h3>
+                    <p class="prayer-intro">Commemorating the descent of the Holy Spirit at Pentecost.</p>
+                    <h4>Troparion</h4>
+                    <p class="prayer-text">Blessed are You, O Christ our God, Who made fishermen all-wise, by sending down upon them the Holy Spirit, and through them drawing all the world into Your net. O Lover of mankind, glory to You.</p>
+                    <h4>Psalm 16 (17)</h4>
+                    <p class="prayer-text">Hear, O Lord, my righteousness; attend to my supplication.<br>Give ear to my prayer, which is not from deceitful lips.<br><br>From Your presence let my judgment come forth;<br>let my eyes behold uprightness.<br>You have tested my heart, You have visited me in the night;<br>You have tried me by fire, and unrighteousness was not found in me.</p>
+                    <h4>Kontakion</h4>
+                    <p class="prayer-text">When the Most High descended and confused the tongues,<br>He divided the nations;<br>but when He distributed the tongues of fire,<br>He called all to unity;<br>therefore, with one voice we glorify the All-Holy Spirit.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Sixth Hour — 12:00 PM</h3>
+                    <p class="prayer-intro">Commemorating Christ's crucifixion.</p>
+                    <h4>Troparion</h4>
+                    <p class="prayer-text">On the sixth day and at the sixth hour You nailed to the Cross the sin which rebellious Adam committed in Paradise. Tear asunder also the handwriting of our sins, O Christ our God, and save us.</p>
+                    <h4>Psalm 53 (54)</h4>
+                    <p class="prayer-text">O God, save me by Your name, and judge me by Your power.<br>O God, hear my prayer; give ear to the words of my mouth.<br><br>For strangers have risen up against me, and mighty men have sought my soul;<br>they have not set God before them.<br>For behold, God is my helper; the Lord is the protector of my soul.</p>
+                    <h4>Kontakion</h4>
+                    <p class="prayer-text">O Christ our God, Who at this hour stretched out Your loving arms upon the Cross, that all nations might be gathered unto You: Grant us also, in this hour, to give ourselves to Your service, and to offer our prayers for the whole world. For You alone are Lord and lover of mankind.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Ninth Hour — 3:00 PM</h3>
+                    <p class="prayer-intro">Commemorating Christ's death on the Cross.</p>
+                    <h4>Troparion</h4>
+                    <p class="prayer-text">Seeing the Prince of Life hanging upon the Cross, the thief cried out: If He who is crucified with us were not God incarnate, the sun would not have hid its rays, nor would the earth have trembled and quaked. O Lord, Who endures all things, remember me when You come into Your kingdom.</p>
+                    <h4>Psalm 83 (84)</h4>
+                    <p class="prayer-text">How beloved are Your dwellings, O Lord of Hosts!<br>My soul longs and faints for the courts of the Lord;<br>my heart and my flesh have rejoiced in the living God.<br><br>Blessed are they that dwell in Your house;<br>unto ages of ages they shall praise You.<br>Blessed is the man whose help is from You;<br>he has made ascents in his heart.</p>
+                    <h4>Luke 23:42-43</h4>
+                    <p class="prayer-text">Then he said, "Jesus, remember me when you come into your kingdom." He replied, "Truly I tell you, today you will be with me in Paradise."</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Vespers — Sunset</h3>
+                    <h4>Psalm 103 (104) — The Psalm of Creation</h4>
+                    <p class="prayer-text">Bless the Lord, O my soul! O Lord my God, You are very great!<br>You have clothed Yourself with thanksgiving and majesty,<br>Who covers Yourself with light as with a garment,<br>Who stretches out the heavens like a curtain.<br><br>Who makes the clouds His chariot, Who walks upon the wings of the wind,<br>Who makes His angels spirits, and His ministers a flame of fire.<br>Who established the earth upon its firm foundation;<br>it shall not be moved unto ages of ages.</p>
+                    <h4>O Gladsome Light (Phos Hilaron)</h4>
+                    <p class="prayer-text">O Gladsome Light of the holy glory of the Immortal Father,<br>heavenly, holy, blessed Jesus Christ.<br>Now that we have come to the setting of the sun<br>and behold the light of evening,<br>we praise God: Father, Son, and Holy Spirit.<br><br>For it is right at all times to worship You<br>with voices of praise,<br>O Son of God and Giver of Life;<br>therefore all the world glorifies You.</p>
+                    <h4>The Song of Simeon (Luke 2:29-32)</h4>
+                    <p class="prayer-text">Lord, now let Your servant depart in peace, according to Your word;<br>for my eyes have seen Your salvation,<br>which You have prepared before the face of all peoples:<br>a light for revelation to the Gentiles,<br>and for glory to Your people Israel.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Compline — Before Sleep</h3>
+                    <h4>Psalm 50 (51):1-4</h4>
+                    <p class="prayer-text">Have mercy on me, O God, according to Your great mercy;<br>and according to the multitude of Your compassions blot out my transgression.<br>Wash me thoroughly from my iniquity, and cleanse me from my sin.<br>For I know my iniquity, and my sin is ever before me.</p>
+                    <h4>Psalm 69 (70)</h4>
+                    <p class="prayer-text">O God, be attentive unto helping me; O Lord, make haste to help me.<br>Let them be shamed and confounded that seek my soul;<br>let them be turned back and put to shame that desire evils for me.<br><br>But let all who seek You rejoice and be glad in You;<br>and let them that love Your salvation say continually: Let God be magnified.</p>
+                    <h4>Prayer Before Sleep</h4>
+                    <p class="prayer-text">Into Your hands, O Lord, I commend my spirit.<br>You have redeemed me, O Lord God of Truth.<br><br>O Lord, I have cried to You, hear me;<br>attend to the voice of my prayer when I call upon You.<br><br>Let my prayer be set forth as incense before You,<br>the lifting up of my hands as an evening sacrifice.</p>
+                    <h4>Kontakion to the Theotokos</h4>
+                    <p class="prayer-text">O Champion General, I, your city, ascribe to you<br>victory-songs of thanksgiving as one delivered from terrors.<br>But since you have invincible might, free me from all dangers,<br>that I may cry out to you: Rejoice, O Bride unwedded!</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-grieving">
                 <article class="prayer">
                     <h3>Kontakion for the Departed</h3>
                     <p class="prayer-text">With the saints give rest, O Christ, to the soul of Your servant, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.</p>
@@ -535,7 +567,8 @@
         <!-- Protestant Tradition -->
         <section class="tradition-content" id="protestant">
             <nav class="topic-tabs">
-                <button class="topic-tab active" data-topic="protestant-grieving">Grieving</button>
+                <button class="topic-tab active" data-topic="protestant-hours">Daily Office</button>
+                <button class="topic-tab" data-topic="protestant-grieving">Grieving</button>
                 <button class="topic-tab" data-topic="protestant-illness">Illness of a Child</button>
                 <button class="topic-tab" data-topic="protestant-departed">For the Departed</button>
                 <button class="topic-tab" data-topic="protestant-lust">Against Lust</button>
@@ -545,7 +578,78 @@
                 <button class="topic-tab" data-topic="protestant-evening">Evening Prayers</button>
             </nav>
 
-            <div class="topic-content active" id="protestant-grieving">
+            <div class="topic-content active" id="protestant-hours">
+                <div class="office-intro">
+                    <p>The Daily Office is a pattern of daily prayer from the Book of Common Prayer tradition, designed to sanctify the day through Scripture, Psalms, and prayer. These offices are used across Anglican, Episcopal, Lutheran, and other liturgical Protestant churches.</p>
+                    <p id="protestant-current-hour" class="current-hour-indicator"></p>
+                </div>
+
+                <article class="prayer">
+                    <h3>Morning Prayer (Matins) — Upon Rising</h3>
+                    <h4>Opening Sentences</h4>
+                    <p class="prayer-text">Lord, open our lips.<br>And our mouth shall proclaim your praise.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit: as it was in the beginning, is now, and will be for ever. Amen. Alleluia.</p>
+                    <h4>Venite (Psalm 95:1-7)</h4>
+                    <p class="prayer-text">Come, let us sing to the Lord;<br>let us shout for joy to the Rock of our salvation.<br>Let us come before his presence with thanksgiving<br>and raise a loud shout to him with psalms.<br><br>For the Lord is a great God,<br>and a great King above all gods.<br>In his hand are the caverns of the earth,<br>and the heights of the hills are his also.<br>The sea is his, for he made it,<br>and his hands have molded the dry land.<br><br>Come, let us bow down, and bend the knee,<br>and kneel before the Lord our Maker.<br>For he is our God, and we are the people of his pasture<br>and the sheep of his hand.</p>
+                    <h4>Psalm 63:1-8</h4>
+                    <p class="prayer-text">O God, you are my God; eagerly I seek you;<br>my soul thirsts for you, my flesh faints for you,<br>as in a barren and dry land where there is no water.<br><br>Therefore I have gazed upon you in your holy place,<br>that I might behold your power and your glory.<br>For your loving-kindness is better than life itself;<br>my lips shall give you praise.<br><br>So will I bless you as long as I live<br>and lift up my hands in your Name.<br>My soul is content, as with marrow and fatness,<br>and my mouth praises you with joyful lips,<br>When I remember you upon my bed,<br>and meditate on you in the night watches.<br>For you have been my helper,<br>and under the shadow of your wings I will rejoice.</p>
+                    <h4>The Benedictus (Luke 1:68-79)</h4>
+                    <p class="prayer-text">Blessed be the Lord, the God of Israel;<br>he has come to his people and set them free.<br>He has raised up for us a mighty savior,<br>born of the house of his servant David.<br><br>Through his holy prophets he promised of old,<br>that he would save us from our enemies,<br>from the hands of all who hate us.<br>He promised to show mercy to our fathers<br>and to remember his holy covenant.<br><br>This was the oath he swore to our father Abraham,<br>to set us free from the hands of our enemies,<br>Free to worship him without fear,<br>holy and righteous in his sight all the days of our life.<br><br>You, my child, shall be called the prophet of the Most High,<br>for you will go before the Lord to prepare his way,<br>To give his people knowledge of salvation<br>by the forgiveness of their sins.<br><br>In the tender compassion of our God<br>the dawn from on high shall break upon us,<br>To shine on those who dwell in darkness and the shadow of death,<br>and to guide our feet into the way of peace.</p>
+                    <h4>The Lord's Prayer</h4>
+                    <p class="prayer-text">Our Father, who art in heaven, hallowed be thy Name, thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. For thine is the kingdom, and the power, and the glory, for ever and ever. Amen.</p>
+                    <h4>Collect for the Day</h4>
+                    <p class="prayer-text">O Lord, our heavenly Father, almighty and everlasting God, who hast safely brought us to the beginning of this day: Defend us in the same with thy mighty power; and grant that this day we fall into no sin, neither run into any kind of danger; but that all our doings may be ordered by thy governance, to do always what is righteous in thy sight; through Jesus Christ our Lord. Amen.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Noonday Prayer — 12:00 PM</h3>
+                    <h4>Opening</h4>
+                    <p class="prayer-text">O God, make speed to save us.<br>O Lord, make haste to help us.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit: as it was in the beginning, is now, and will be for ever. Amen.</p>
+                    <h4>Psalm 119:105-112</h4>
+                    <p class="prayer-text">Your word is a lantern to my feet<br>and a light upon my path.<br>I have sworn and am determined<br>to keep your righteous judgments.<br><br>I am deeply troubled;<br>preserve my life, O Lord, according to your word.<br>Accept, O Lord, the willing tribute of my lips,<br>and teach me your judgments.<br><br>My life is always in my hand,<br>yet I do not forget your law.<br>The wicked have set a trap for me,<br>but I have not strayed from your commandments.<br><br>Your decrees are my inheritance for ever;<br>truly, they are the joy of my heart.<br>I have applied my heart to fulfill your statutes<br>for ever and to the end.</p>
+                    <h4>Psalm 121</h4>
+                    <p class="prayer-text">I lift up my eyes to the hills;<br>from where is my help to come?<br>My help comes from the Lord,<br>the maker of heaven and earth.<br><br>He will not let your foot be moved<br>and he who watches over you will not fall asleep.<br>Behold, he who keeps watch over Israel<br>shall neither slumber nor sleep;<br><br>The Lord himself watches over you;<br>the Lord is your shade at your right hand,<br>So that the sun shall not strike you by day,<br>nor the moon by night.<br><br>The Lord shall preserve you from all evil;<br>it is he who shall keep you safe.<br>The Lord shall watch over your going out and your coming in,<br>from this time forth for evermore.</p>
+                    <h4>Closing</h4>
+                    <p class="prayer-text">Heavenly Father, send your Holy Spirit into our hearts, to direct and rule us according to your will, to comfort us in all our afflictions, to defend us from all error, and to lead us into all truth; through Jesus Christ our Lord. Amen.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Evening Prayer (Evensong) — Sunset</h3>
+                    <h4>Opening Sentences</h4>
+                    <p class="prayer-text">O God, make speed to save us.<br>O Lord, make haste to help us.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit: as it was in the beginning, is now, and will be for ever. Amen.</p>
+                    <h4>O Gracious Light (Phos Hilaron)</h4>
+                    <p class="prayer-text">O gracious Light,<br>pure brightness of the everliving Father in heaven,<br>O Jesus Christ, holy and blessed!<br><br>Now as we come to the setting of the sun,<br>and our eyes behold the vesper light,<br>we sing your praises, O God: Father, Son, and Holy Spirit.<br><br>You are worthy at all times to be praised by happy voices,<br>O Son of God, O Giver of life,<br>and to be glorified through all the worlds.</p>
+                    <h4>Psalm 141</h4>
+                    <p class="prayer-text">O Lord, I call to you; come to me quickly;<br>hear my voice when I cry to you.<br>Let my prayer be set forth in your sight as incense,<br>the lifting up of my hands as the evening sacrifice.<br><br>Set a watch before my mouth, O Lord,<br>and guard the door of my lips;<br>let not my heart incline to any evil thing.<br><br>Let me not be occupied in wickedness with evildoers,<br>nor eat of their choice foods.<br>Let the righteous smite me in friendly rebuke;<br>let not the oil of the unrighteous anoint my head.</p>
+                    <h4>The Magnificat (Luke 1:46-55)</h4>
+                    <p class="prayer-text">My soul proclaims the greatness of the Lord,<br>my spirit rejoices in God my Savior;<br>for he has looked with favor on his lowly servant.<br><br>From this day all generations will call me blessed:<br>the Almighty has done great things for me,<br>and holy is his Name.<br><br>He has mercy on those who fear him<br>in every generation.<br>He has shown the strength of his arm,<br>he has scattered the proud in their conceit.<br><br>He has cast down the mighty from their thrones,<br>and has lifted up the lowly.<br>He has filled the hungry with good things,<br>and the rich he has sent away empty.<br><br>He has come to the help of his servant Israel,<br>for he has remembered his promise of mercy,<br>The promise he made to our fathers,<br>to Abraham and his children for ever.</p>
+                    <h4>Collect for Evening</h4>
+                    <p class="prayer-text">O Lord, support us all the day long, until the shadows lengthen, and the evening comes, and the busy world is hushed, and the fever of life is over, and our work is done. Then in your mercy, grant us a safe lodging, and a holy rest, and peace at the last. Amen.</p>
+                </article>
+
+                <article class="prayer">
+                    <h3>Compline (Night Prayer) — Before Bed</h3>
+                    <h4>Opening</h4>
+                    <p class="prayer-text">The Lord Almighty grant us a peaceful night and a perfect end. Amen.<br><br>Our help is in the Name of the Lord;<br>The maker of heaven and earth.</p>
+                    <h4>Confession</h4>
+                    <p class="prayer-text">Almighty God, our heavenly Father: We have sinned against you, through our own fault, in thought, and word, and deed, and in what we have left undone. For the sake of your Son our Lord Jesus Christ, forgive us all our offenses; and grant that we may serve you in newness of life, to the glory of your Name. Amen.</p>
+                    <h4>Psalm 134</h4>
+                    <p class="prayer-text">Behold now, bless the Lord, all you servants of the Lord,<br>you that stand by night in the house of the Lord.<br>Lift up your hands in the holy place and bless the Lord;<br>the Lord who made heaven and earth bless you out of Zion.</p>
+                    <h4>Psalm 91:1-6</h4>
+                    <p class="prayer-text">He who dwells in the shelter of the Most High,<br>abides under the shadow of the Almighty.<br>He shall say to the Lord, "You are my refuge and my stronghold,<br>my God in whom I put my trust."<br><br>He shall deliver you from the snare of the hunter<br>and from the deadly pestilence.<br>He shall cover you with his pinions,<br>and you shall find refuge under his wings;<br>his faithfulness shall be a shield and buckler.<br><br>You shall not be afraid of any terror by night,<br>nor of the arrow that flies by day;<br>Of the plague that stalks in the darkness,<br>nor of the sickness that lays waste at mid-day.</p>
+                    <h4>The Nunc Dimittis (Luke 2:29-32)</h4>
+                    <p class="prayer-text">Lord, you now have set your servant free<br>to go in peace as you have promised;<br>For these eyes of mine have seen the Savior,<br>whom you have prepared for all the world to see:<br>A Light to enlighten the nations,<br>and the glory of your people Israel.</p>
+                    <h4>Closing Prayers</h4>
+                    <p class="prayer-text">Into your hands, O Lord, I commend my spirit;<br>For you have redeemed me, O Lord, O God of truth.<br>Keep us, O Lord, as the apple of your eye;<br>Hide us under the shadow of your wings.<br><br>Lord, hear our prayer;<br>And let our cry come to you.<br>Let us pray.</p>
+                    <h4>Collect</h4>
+                    <p class="prayer-text">Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon all who dwell here; through Jesus Christ our Lord. Amen.</p>
+                    <h4>Antiphon</h4>
+                    <p class="prayer-text">Guide us waking, O Lord, and guard us sleeping; that awake we may watch with Christ, and asleep we may rest in peace.</p>
+                    <h4>Benediction</h4>
+                    <p class="prayer-text">The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-grieving">
                 <article class="prayer">
                     <h3>A Prayer in Time of Loss</h3>
                     <p class="prayer-text">Almighty God, Father of mercies and giver of comfort: Deal graciously, we pray, with all who mourn; that, casting all their care on You, they may know the consolation of Your love; through Jesus Christ our Lord. Amen.</p>

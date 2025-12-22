@@ -212,6 +212,67 @@ main {
     text-align: right;
 }
 
+/* Music Controls */
+.music-controls {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.music-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.music-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.music-btn.playing {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.music-btn.playing .music-label {
+    display: none;
+}
+
+.music-btn.playing::after {
+    content: 'Pause';
+}
+
+.music-icon {
+    font-size: 1.1rem;
+}
+
+.music-select {
+    padding: 0.4rem 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.music-select option {
+    background: var(--primary-color);
+    color: white;
+}
+
 /* Season Banner */
 .season-banner {
     margin-top: 1rem;

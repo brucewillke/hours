@@ -6,10 +6,61 @@ document.addEventListener('DOMContentLoaded', function() {
     restoreState();
     initLiturgicalDisplay();
     initDailyOffice();
+    initMusicPlayer();
 
     // Update every minute
     setInterval(updateTimeBasedContent, 60000);
 });
+
+// Music sources (public domain from archive.org)
+const MUSIC_SOURCES = {
+    gregorian: 'https://ia800500.us.archive.org/14/items/GregorianChantKyrieXVI/Kyrie%20XVI.mp3',
+    orthodox: 'https://ia800301.us.archive.org/14/items/OrthodoxChantLordHaveMercy/Orthodox%20Chant%20-%20Lord%20Have%20Mercy.mp3',
+    organ: 'https://ia800501.us.archive.org/35/items/BachToccataAndFugueInDMinor/Bach-ToccataAndFugueInDMinor.mp3'
+};
+
+// Initialize music player
+function initMusicPlayer() {
+    const toggleBtn = document.getElementById('music-toggle');
+    const selectEl = document.getElementById('music-select');
+    const audio = document.getElementById('ambient-audio');
+    const audioSource = document.getElementById('audio-source');
+
+    if (!toggleBtn || !audio) return;
+
+    // Set initial source
+    audioSource.src = MUSIC_SOURCES.gregorian;
+    audio.load();
+
+    // Toggle play/pause
+    toggleBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play().then(() => {
+                toggleBtn.classList.add('playing');
+            }).catch(err => {
+                console.log('Audio playback failed:', err);
+            });
+        } else {
+            audio.pause();
+            toggleBtn.classList.remove('playing');
+        }
+    });
+
+    // Change music source
+    selectEl.addEventListener('change', function() {
+        const wasPlaying = !audio.paused;
+        audioSource.src = MUSIC_SOURCES[this.value];
+        audio.load();
+        if (wasPlaying) {
+            audio.play();
+        }
+    });
+
+    // Update button state when audio ends/plays
+    audio.addEventListener('play', () => toggleBtn.classList.add('playing'));
+    audio.addEventListener('pause', () => toggleBtn.classList.remove('playing'));
+    audio.addEventListener('ended', () => toggleBtn.classList.remove('playing'));
+}
 
 // Handle tradition (main) tab navigation
 function initTraditionTabs() {
