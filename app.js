@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Music sources (public domain from archive.org)
 const MUSIC_SOURCES = {
-    gregorian: 'https://ia800500.us.archive.org/14/items/GregorianChantKyrieXVI/Kyrie%20XVI.mp3',
-    orthodox: 'https://ia800301.us.archive.org/14/items/OrthodoxChantLordHaveMercy/Orthodox%20Chant%20-%20Lord%20Have%20Mercy.mp3',
-    organ: 'https://ia800501.us.archive.org/35/items/BachToccataAndFugueInDMinor/Bach-ToccataAndFugueInDMinor.mp3'
+    gregorian: 'https://archive.org/download/GregorianChantMass/02Track2_64kb.mp3',
+    orthodox: 'https://archive.org/download/GregorianChantsMeditationMusic/Cistercian%20chant.mp3',
+    organ: 'https://archive.org/download/GregorianChantsMeditationMusic/The%20Cistercian%20Monks.mp3'
 };
 
 // Initialize music player
