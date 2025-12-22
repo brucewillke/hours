@@ -120,31 +120,30 @@ main {
 /* Tradition Content Sections */
 .tradition-content {
     display: none;
-    position: relative;
 }
 
 /* Background images for each tradition */
-#catholic {
+body.tradition-catholic {
     background-image: url('images/crucifix.svg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 200px auto;
+    background-position: center 40%;
+    background-size: 250px auto;
     background-attachment: fixed;
 }
 
-#byzantine {
+body.tradition-byzantine {
     background-image: url('images/icon.svg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 180px auto;
+    background-position: center 40%;
+    background-size: 220px auto;
     background-attachment: fixed;
 }
 
-#protestant {
+body.tradition-protestant {
     background-image: url('images/cross.svg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 150px auto;
+    background-position: center 40%;
+    background-size: 200px auto;
     background-attachment: fixed;
 }
 

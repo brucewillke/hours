@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTraditionTabs();
     initTopicTabs();
     restoreState();
+    setInitialBackground();
     initLiturgicalDisplay();
     initDailyOffice();
     initMusicPlayer();
@@ -80,10 +81,23 @@ function initTraditionTabs() {
             });
             document.getElementById(tradition).classList.add('active');
 
+            // Update body background class
+            document.body.classList.remove('tradition-catholic', 'tradition-byzantine', 'tradition-protestant');
+            document.body.classList.add('tradition-' + tradition);
+
             // Save state
             saveState();
         });
     });
+}
+
+// Set initial background on page load
+function setInitialBackground() {
+    const activeTab = document.querySelector('.tradition-tab.active');
+    if (activeTab) {
+        const tradition = activeTab.dataset.tradition;
+        document.body.classList.add('tradition-' + tradition);
+    }
 }
 
 // Handle topic (secondary) tab navigation
