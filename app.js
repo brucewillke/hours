@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const MUSIC_SOURCES = {
     gregorian: 'https://archive.org/download/GregorianChantMass/02Track2_64kb.mp3',
     orthodox: 'https://archive.org/download/GregorianChantsMeditationMusic/Cistercian%20chant.mp3',
-    organ: 'https://archive.org/download/GregorianChantsMeditationMusic/The%20Cistercian%20Monks.mp3'
+    organ: 'https://archive.org/download/ToccataAndFugueInDMinor/12%20Toccata%20And%20Fugue%20in%20D%20Minor.mp3'
 };
 
 // Initialize music player
