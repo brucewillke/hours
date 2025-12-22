@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLiturgicalDisplay();
     initDailyOffice();
     initMusicPlayer();
+    initCollapsiblePrayers();
 
     // Update every minute
     setInterval(updateTimeBasedContent, 60000);
@@ -377,3 +378,34 @@ document.addEventListener('keydown', function(e) {
         traditionTabs[newIndex].click();
     }
 });
+
+// Initialize collapsible prayers
+function initCollapsiblePrayers() {
+    const prayers = document.querySelectorAll('.prayer');
+
+    prayers.forEach(prayer => {
+        const title = prayer.querySelector('h3');
+        if (!title) return;
+
+        // Wrap all content after h3 in a prayer-body div
+        const body = document.createElement('div');
+        body.className = 'prayer-body';
+
+        // Move all siblings after h3 into the body wrapper
+        let sibling = title.nextElementSibling;
+        while (sibling) {
+            const next = sibling.nextElementSibling;
+            body.appendChild(sibling);
+            sibling = next;
+        }
+        prayer.appendChild(body);
+
+        // Start collapsed
+        prayer.classList.add('collapsed');
+
+        // Toggle on title click
+        title.addEventListener('click', function() {
+            prayer.classList.toggle('collapsed');
+        });
+    });
+}
