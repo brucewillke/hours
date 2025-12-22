@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours - A Prayer Book</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Hours</h1>
+        <p class="subtitle">A Book of Prayers</p>
+    </header>
+
+    <nav class="tradition-tabs">
+        <button class="tradition-tab active" data-tradition="catholic">Catholic</button>
+        <button class="tradition-tab" data-tradition="byzantine">Byzantine</button>
+        <button class="tradition-tab" data-tradition="protestant">Protestant</button>
+    </nav>
+
+    <main>
+        <!-- Catholic Tradition -->
+        <section class="tradition-content active" id="catholic">
+            <nav class="topic-tabs">
+                <button class="topic-tab active" data-topic="catholic-grieving">Grieving</button>
+                <button class="topic-tab" data-topic="catholic-illness">Illness of a Child</button>
+                <button class="topic-tab" data-topic="catholic-departed">For the Departed</button>
+                <button class="topic-tab" data-topic="catholic-lust">Against Lust</button>
+                <button class="topic-tab" data-topic="catholic-humility">For Humility</button>
+                <button class="topic-tab" data-topic="catholic-healing">For Healing</button>
+                <button class="topic-tab" data-topic="catholic-morning">Morning Prayers</button>
+                <button class="topic-tab" data-topic="catholic-evening">Evening Prayers</button>
+            </nav>
+
+            <div class="topic-content active" id="catholic-grieving">
+                <article class="prayer">
+                    <h3>Prayer for Those Who Mourn</h3>
+                    <p class="prayer-text">O God, who brought us to birth, and in whose arms we die, in our grief and shock contain and comfort us; embrace us with your love, give us hope in our confusion, and grace to let go into new life; through Jesus Christ our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>De Profundis (Psalm 130)</h3>
+                    <p class="prayer-text">Out of the depths I cry to you, O Lord;<br>
+                    Lord, hear my voice!<br>
+                    Let your ears be attentive<br>
+                    to the voice of my supplications!<br><br>
+                    If you, O Lord, should mark iniquities,<br>
+                    Lord, who could stand?<br>
+                    But there is forgiveness with you,<br>
+                    so that you may be revered.<br><br>
+                    I wait for the Lord, my soul waits,<br>
+                    and in his word I hope;<br>
+                    my soul waits for the Lord<br>
+                    more than those who watch for the morning.<br><br>
+                    O Israel, hope in the Lord!<br>
+                    For with the Lord there is steadfast love,<br>
+                    and with him is great power to redeem.<br>
+                    It is he who will redeem Israel<br>
+                    from all its iniquities.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer of St. Francis for the Sorrowful</h3>
+                    <p class="prayer-text">Lord, make me an instrument of your peace:<br>
+                    where there is hatred, let me sow love;<br>
+                    where there is injury, pardon;<br>
+                    where there is doubt, faith;<br>
+                    where there is despair, hope;<br>
+                    where there is darkness, light;<br>
+                    where there is sadness, joy.<br><br>
+                    O divine Master, grant that I may not so much seek<br>
+                    to be consoled as to console,<br>
+                    to be understood as to understand,<br>
+                    to be loved as to love.<br>
+                    For it is in giving that we receive,<br>
+                    it is in pardoning that we are pardoned,<br>
+                    and it is in dying that we are born to eternal life. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-illness">
+                <article class="prayer">
+                    <h3>Prayer for a Sick Child</h3>
+                    <p class="prayer-text">Heavenly Father, watch with us over your child, and grant that they may be restored to that perfect health which it is yours alone to give; through Jesus Christ our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer to Our Lady for a Sick Child</h3>
+                    <p class="prayer-text">O Mary, Mother of God and our most gentle Queen and Mother, look down with mercy upon this child who is sick and upon their parents who grieve. Intercede for us all with your Son, Jesus, that He may heal the one we love. We ask this in union with you and all the saints, trusting that God will hear our prayers. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer to St. Gerard for a Sick Child</h3>
+                    <p class="prayer-text">St. Gerard, who, like the Savior, loved children so tenderly and by your prayers freed many from disease and even from death, listen to us who are pleading for our sick child. We thank God for the great gift of our child and ask Him to restore our child to health if such be His holy will. This favor we beg of you through your love for all children and mothers. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-departed">
+                <article class="prayer">
+                    <h3>Eternal Rest Prayer</h3>
+                    <p class="prayer-text">Eternal rest grant unto them, O Lord,<br>
+                    and let perpetual light shine upon them.<br>
+                    May they rest in peace. Amen.<br><br>
+                    May their souls and the souls of all the faithful departed,<br>
+                    through the mercy of God, rest in peace. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for the Dead</h3>
+                    <p class="prayer-text">God our Father, Your power brings us to birth, Your providence guides our lives, and by Your command we return to dust.<br><br>
+                    Lord, those who die still live in Your presence, their lives change but do not end. I pray in hope for my family, relatives and friends, and for all the dead known to You alone.<br><br>
+                    In company with Christ, Who died and now lives, may they rejoice in Your kingdom, where all our tears are wiped away. Unite us together again in one family, to sing Your praise forever and ever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer of Commendation</h3>
+                    <p class="prayer-text">Into your hands, O merciful Savior, we commend your servant. Acknowledge, we humbly beseech you, a sheep of your own fold, a lamb of your own flock, a sinner of your own redeeming. Receive them into the arms of your mercy, into the blessed rest of everlasting peace, and into the glorious company of the saints in light. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-lust">
+                <article class="prayer">
+                    <h3>Prayer for Purity</h3>
+                    <p class="prayer-text">Lord, set aflame my heart and my entire being with the fire of the Holy Spirit, that I may serve You with a chaste body and pure mind. Through Christ our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer to St. Joseph for Purity</h3>
+                    <p class="prayer-text">Guardian of virgins and holy father Joseph, to whose faithful custody Christ Jesus, Innocence itself, and Mary, Virgin of virgins, were committed; I pray and beseech you by these dear pledges, Jesus and Mary, that being preserved from all uncleanness, I may with spotless mind, pure heart, and chaste body, ever serve Jesus and Mary most chastely all the days of my life. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Anima Christi</h3>
+                    <p class="prayer-text">Soul of Christ, sanctify me.<br>
+                    Body of Christ, save me.<br>
+                    Blood of Christ, inebriate me.<br>
+                    Water from the side of Christ, wash me.<br>
+                    Passion of Christ, strengthen me.<br>
+                    O good Jesus, hear me.<br>
+                    Within Your wounds hide me.<br>
+                    Permit me not to be separated from You.<br>
+                    From the wicked foe defend me.<br>
+                    At the hour of my death call me<br>
+                    and bid me come to You,<br>
+                    that with Your saints I may praise You<br>
+                    forever and ever. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-humility">
+                <article class="prayer">
+                    <h3>Litany of Humility</h3>
+                    <p class="prayer-text">O Jesus, meek and humble of heart, hear me.<br><br>
+                    From the desire of being esteemed, deliver me, O Jesus.<br>
+                    From the desire of being loved, deliver me, O Jesus.<br>
+                    From the desire of being extolled, deliver me, O Jesus.<br>
+                    From the desire of being honored, deliver me, O Jesus.<br>
+                    From the desire of being praised, deliver me, O Jesus.<br>
+                    From the desire of being preferred to others, deliver me, O Jesus.<br>
+                    From the desire of being consulted, deliver me, O Jesus.<br>
+                    From the desire of being approved, deliver me, O Jesus.<br><br>
+                    From the fear of being humiliated, deliver me, O Jesus.<br>
+                    From the fear of being despised, deliver me, O Jesus.<br>
+                    From the fear of suffering rebukes, deliver me, O Jesus.<br>
+                    From the fear of being calumniated, deliver me, O Jesus.<br>
+                    From the fear of being forgotten, deliver me, O Jesus.<br>
+                    From the fear of being ridiculed, deliver me, O Jesus.<br>
+                    From the fear of being wronged, deliver me, O Jesus.<br>
+                    From the fear of being suspected, deliver me, O Jesus.<br><br>
+                    That others may be loved more than I, Jesus, grant me the grace to desire it.<br>
+                    That others may be esteemed more than I, Jesus, grant me the grace to desire it.<br>
+                    That in the opinion of the world, others may increase and I may decrease, Jesus, grant me the grace to desire it.<br>
+                    That others may be chosen and I set aside, Jesus, grant me the grace to desire it.<br>
+                    That others may be praised and I go unnoticed, Jesus, grant me the grace to desire it.<br>
+                    That others may be preferred to me in everything, Jesus, grant me the grace to desire it.<br>
+                    That others may become holier than I, provided that I may become as holy as I should, Jesus, grant me the grace to desire it. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for Humility</h3>
+                    <p class="prayer-text">O Lord, I am not worthy that You should come under my roof, but only say the word and my soul shall be healed. Grant me the grace of true humility, that I may know myself as I truly am before You, and love You above all things. Help me to decrease that You may increase in me. Through Christ our Lord. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-healing">
+                <article class="prayer">
+                    <h3>Prayer for Healing</h3>
+                    <p class="prayer-text">Lord Jesus Christ, by Your patience in suffering You hallowed earthly pain and gave us the example of obedience to Your Father's will. Be near me in my time of weakness and pain; sustain me by Your grace, that my strength and courage may not fail; heal me according to Your will; and help me always to believe that what happens to me here is of little account if You hold me in eternal life, my Lord and my God. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer to St. Raphael for Healing</h3>
+                    <p class="prayer-text">Glorious Archangel St. Raphael, great prince of the heavenly court, you are illustrious for your gifts of wisdom and grace. You are a guide of those who journey by land or sea or air, consoler of the afflicted, and refuge of sinners. I beg you, assist me in all my needs and in all the sufferings of this life, as once you helped the young Tobias on his travels. Because you are the "medicine of God," I humbly pray you to heal the many infirmities of my soul and the ills that afflict my body. I especially ask of you the favor of healing, and the great grace of purity to prepare me to be the temple of the Holy Spirit. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for the Sick</h3>
+                    <p class="prayer-text">Father of goodness and love, hear our prayers for the sick members of our community and for all who are in need. Amid mental and physical suffering may they find consolation in your healing presence. Show your mercy as you close wounds, cure illness, make broken bodies whole and free downcast spirits. May these special people find lasting health and deliverance, and so join us in thanking you for all your gifts. We ask this through the Lord Jesus who healed those who believed. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-morning">
+                <article class="prayer">
+                    <h3>Morning Offering</h3>
+                    <p class="prayer-text">O Jesus, through the Immaculate Heart of Mary, I offer You my prayers, works, joys, and sufferings of this day in union with the Holy Sacrifice of the Mass throughout the world. I offer them for all the intentions of Your Sacred Heart: the salvation of souls, the reparation for sin, and the reunion of all Christians. I offer them for the intentions of our bishops and of all Apostles of Prayer, and in particular for those recommended by our Holy Father this month. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer Upon Waking</h3>
+                    <p class="prayer-text">I arise today through the strength of heaven:<br>
+                    Light of sun, brilliance of moon,<br>
+                    Splendor of fire, speed of lightning,<br>
+                    Swiftness of wind, depth of sea,<br>
+                    Stability of earth, firmness of rock.<br><br>
+                    I arise today through God's strength to pilot me:<br>
+                    God's might to uphold me,<br>
+                    God's wisdom to guide me,<br>
+                    God's eye to look before me,<br>
+                    God's ear to hear me,<br>
+                    God's word to speak for me,<br>
+                    God's hand to guard me,<br>
+                    God's way to lie before me. Amen.</p>
+                    <p class="attribution">— from St. Patrick's Breastplate</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="catholic-evening">
+                <article class="prayer">
+                    <h3>Night Prayer (Compline)</h3>
+                    <p class="prayer-text">Visit, we beseech You, O Lord, this dwelling, and drive far from it all snares of the enemy. Let Your holy angels dwell within it to preserve us in peace; and let Your blessing be upon all who dwell herein, through Jesus Christ our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer Before Sleep</h3>
+                    <p class="prayer-text">Watch, O Lord, with those who wake, or watch, or weep tonight, and give Your angels charge over those who sleep. Tend Your sick ones, O Lord Christ. Rest Your weary ones. Bless Your dying ones. Soothe Your suffering ones. Pity Your afflicted ones. Shield Your joyous ones, and all for Your love's sake. Amen.</p>
+                    <p class="attribution">— St. Augustine</p>
+                </article>
+                <article class="prayer">
+                    <h3>Act of Contrition</h3>
+                    <p class="prayer-text">O my God, I am heartily sorry for having offended Thee, and I detest all my sins because of Thy just punishments, but most of all because they offend Thee, my God, Who art all-good and deserving of all my love. I firmly resolve, with the help of Thy grace, to sin no more and to avoid the near occasions of sin. Amen.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Byzantine Tradition -->
+        <section class="tradition-content" id="byzantine">
+            <nav class="topic-tabs">
+                <button class="topic-tab active" data-topic="byzantine-grieving">Grieving</button>
+                <button class="topic-tab" data-topic="byzantine-illness">Illness of a Child</button>
+                <button class="topic-tab" data-topic="byzantine-departed">For the Departed</button>
+                <button class="topic-tab" data-topic="byzantine-lust">Against Lust</button>
+                <button class="topic-tab" data-topic="byzantine-humility">For Humility</button>
+                <button class="topic-tab" data-topic="byzantine-healing">For Healing</button>
+                <button class="topic-tab" data-topic="byzantine-morning">Morning Prayers</button>
+                <button class="topic-tab" data-topic="byzantine-evening">Evening Prayers</button>
+            </nav>
+
+            <div class="topic-content active" id="byzantine-grieving">
+                <article class="prayer">
+                    <h3>Kontakion for the Departed</h3>
+                    <p class="prayer-text">With the saints give rest, O Christ, to the soul of Your servant, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Troparion in Time of Sorrow</h3>
+                    <p class="prayer-text">Remember, O Lord, in Your goodness those who weep and mourn this day; comfort them with Your Holy Spirit, the Comforter. Grant them the peace that passes all understanding, and lead them by still waters to restore their souls. For You are the Resurrection and the Life, and to You we give glory, Father, Son, and Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer in Great Grief</h3>
+                    <p class="prayer-text">O Lord Jesus Christ, Son of God, Who did weep at the tomb of Lazarus: Accept the tears of our sorrow; and by Your Passion heal the wounds of our souls. By Your Resurrection raise us from the depths of grief to the heights of joy. Let Your divine consolation descend upon us, and cause the light of Your love to shine in the darkness of our mourning, for You are blessed unto ages of ages. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-illness">
+                <article class="prayer">
+                    <h3>Prayer for a Sick Child</h3>
+                    <p class="prayer-text">O Lord our God, Who watches over and heals our children, look with compassion upon this child who is ill. Grant healing according to Your will, comfort to those who keep vigil, and patience to all who suffer. For You are the Physician of our souls and bodies, O Christ our God, and to You we give glory, together with Your eternal Father, and Your all-holy, good, and life-creating Spirit, now and ever, and unto ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer to the Theotokos for a Sick Child</h3>
+                    <p class="prayer-text">O most holy Theotokos, Mother of the Physician of all, look down from heaven with your tender compassion upon this child who suffers. As you brought forth Christ, the Healer of all creation, beseech Him now to restore this little one to health. Cover this child with your protecting veil, and grant peace to those who love and care for them. Through your prayers, may we all find strength in the Lord. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-departed">
+                <article class="prayer">
+                    <h3>Prayer for the Departed</h3>
+                    <p class="prayer-text">O God of spirits and of all flesh, Who has trampled down death and overthrown the devil, and given life to Your world: Give rest, O Lord, to the soul of Your departed servant in a place of brightness, a place of refreshment, a place of repose, where all sickness, sighing, and sorrow have fled away. Pardon every transgression which they have committed, whether by word or deed or thought. For You are a good God and love mankind; because there is no man who lives yet does not sin, for You only are without sin, Your righteousness is to all eternity, and Your word is truth. For You are the Resurrection, the Life, and the Repose of Your departed servant, O Christ our God, and to You we give glory, together with Your Father, who is from everlasting, and Your all-holy, good, and life-creating Spirit, now and ever, and unto ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Memory Eternal</h3>
+                    <p class="prayer-text">Memory eternal! Memory eternal! Memory eternal!<br><br>
+                    Grant, O Lord, eternal rest to Your departed servant, and make their memory to be eternal!</p>
+                </article>
+                <article class="prayer">
+                    <h3>Trisagion for the Dead</h3>
+                    <p class="prayer-text">Holy God, Holy Mighty, Holy Immortal, have mercy on us.<br>
+                    Holy God, Holy Mighty, Holy Immortal, have mercy on us.<br>
+                    Holy God, Holy Mighty, Holy Immortal, have mercy on us.<br><br>
+                    Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.<br><br>
+                    O Most Holy Trinity, have mercy on us. Lord, cleanse us of our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Your name's sake.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-lust">
+                <article class="prayer">
+                    <h3>Prayer for Purity of Heart</h3>
+                    <p class="prayer-text">O Lord, grant me to greet the coming day in peace. Help me in all things to rely upon Your holy will. In every hour of the day reveal Your will to me. Bless my dealings with all who surround me. Teach me to treat all that comes to me throughout the day with peace of soul and with firm conviction that Your will governs all. In all my deeds and words, guide my thoughts and feelings. In unforeseen events, let me not forget that all are sent by You. Teach me to act firmly and wisely, without embittering and embarrassing others. Give me strength to bear the fatigue of the coming day with all that it shall bring. Direct my will, teach me to pray. And You, Yourself, pray in me. Amen.</p>
+                    <p class="attribution">— Prayer of Optina Elders</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer Against Temptation</h3>
+                    <p class="prayer-text">O Lord Jesus Christ, Son of God, have mercy on me, a sinner.<br><br>
+                    Create in me a clean heart, O God, and renew a right spirit within me. Cast me not away from Your presence, and take not Your Holy Spirit from me. Restore unto me the joy of Your salvation, and uphold me with Your free Spirit.<br><br>
+                    Lord, You know the weakness of my flesh and the wandering of my mind. I am not able to resist temptation by my own power, but I place all my trust in You. Guard me by Your grace, and deliver me from the passions that war against my soul. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-humility">
+                <article class="prayer">
+                    <h3>Prayer of St. Ephrem the Syrian</h3>
+                    <p class="prayer-text">O Lord and Master of my life, take from me the spirit of sloth, despair, lust of power, and idle talk.<br><br>
+                    But give rather the spirit of chastity, humility, patience, and love to Your servant.<br><br>
+                    Yes, O Lord and King, grant me to see my own sins and not to judge my brother, for You are blessed unto ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for a Humble Heart</h3>
+                    <p class="prayer-text">O Lord, You are gentle and humble of heart. Teach me true humility, that I may know myself as I am before You, neither exalting myself above others nor despising my neighbor. Help me to see Your image in every person I meet, and to serve them as I would serve You. Grant me a heart that is meek and lowly, free from pride and vainglory, for Yours is the kingdom, and the power, and the glory, forever. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-healing">
+                <article class="prayer">
+                    <h3>Prayer for the Sick</h3>
+                    <p class="prayer-text">O Lord Almighty, Healer of our souls and bodies, Who puts down and raises up, Who chastens and heals also: Visit now in Your mercy our infirm brother (sister). Stretch forth Your arm that is full of healing and health, and raise them up from their bed of sickness, and cure them of their illness. Put away from them the spirit of disease and of every malady, pain, and fever to which they are bound. And if they have sins and transgressions, grant to them remission and forgiveness, for You love mankind. Yes, O Lord my God, pity Your creation, through the compassions of Your Only-Begotten Son, together with Your All-Holy, Good, and Life-Creating Spirit, with Whom You are blessed, both now and ever, and to ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Troparion for Healing</h3>
+                    <p class="prayer-text">O Physician and Helper of those who are in sickness, Protector and Guardian of those who are in need: Save Your servants from their afflictions, O Lord, for You alone are the Source of healing, the Hope and Comfort of the despairing, the Savior and God of all. To You we offer glory, with the Father and the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-morning">
+                <article class="prayer">
+                    <h3>Morning Prayer</h3>
+                    <p class="prayer-text">O Lord, grant me to greet the coming day in peace. Help me in all things to rely upon Your holy will. In every hour of the day reveal Your will to me. Bless my dealings with all who surround me. Teach me to treat all that comes to me throughout the day with peace of soul, and with the firm conviction that Your will governs all. In all my deeds and words guide my thoughts and feelings. In unforeseen events let me not forget that all are sent by You. Teach me to act firmly and wisely, without embittering or embarrassing others. Give me strength to bear the fatigue of the coming day with all that it shall bring. Direct my will, teach me to pray, pray You Yourself in me. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Troparion of the Resurrection</h3>
+                    <p class="prayer-text">Having risen from the tomb, and having burst the bonds of Hades, You have destroyed the sentence of death, O Lord, delivering all from the snares of the enemy. Manifesting Yourself to Your Apostles, You sent them forth to preach. And through them You have granted Your peace to the world, O only plenteous in mercy.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer on Rising</h3>
+                    <p class="prayer-text">In the name of the Father, and of the Son, and of the Holy Spirit. Amen.<br><br>
+                    Glory to You, O God, glory to You.<br><br>
+                    O Heavenly King, Comforter, Spirit of Truth, Who are everywhere present and fill all things, Treasury of good things and Giver of life: Come and dwell in us, and cleanse us from every stain, and save our souls, O Good One.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="byzantine-evening">
+                <article class="prayer">
+                    <h3>Evening Prayer</h3>
+                    <p class="prayer-text">O Lord our God, whatever sins I have committed this day in word, deed, or thought, forgive me, for You are good and love mankind. Grant me peaceful and undisturbed sleep. Send Your guardian angel to protect and guard me from all evil. For You are the guardian of our souls and bodies, and to You we give glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer Before Sleep</h3>
+                    <p class="prayer-text">Into Your hands, O Lord, I commend my spirit. You have redeemed me, O Lord God of Truth. Our Father, Who art in heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>The Nunc Dimittis</h3>
+                    <p class="prayer-text">Lord, now let Your servant depart in peace, according to Your word; for my eyes have seen Your salvation, which You have prepared in the presence of all peoples, a light for revelation to the Gentiles, and for glory to Your people Israel.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Protestant Tradition -->
+        <section class="tradition-content" id="protestant">
+            <nav class="topic-tabs">
+                <button class="topic-tab active" data-topic="protestant-grieving">Grieving</button>
+                <button class="topic-tab" data-topic="protestant-illness">Illness of a Child</button>
+                <button class="topic-tab" data-topic="protestant-departed">For the Departed</button>
+                <button class="topic-tab" data-topic="protestant-lust">Against Lust</button>
+                <button class="topic-tab" data-topic="protestant-humility">For Humility</button>
+                <button class="topic-tab" data-topic="protestant-healing">For Healing</button>
+                <button class="topic-tab" data-topic="protestant-morning">Morning Prayers</button>
+                <button class="topic-tab" data-topic="protestant-evening">Evening Prayers</button>
+            </nav>
+
+            <div class="topic-content active" id="protestant-grieving">
+                <article class="prayer">
+                    <h3>A Prayer in Time of Loss</h3>
+                    <p class="prayer-text">Almighty God, Father of mercies and giver of comfort: Deal graciously, we pray, with all who mourn; that, casting all their care on You, they may know the consolation of Your love; through Jesus Christ our Lord. Amen.</p>
+                    <p class="attribution">— Book of Common Prayer</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer from the Valley of Sorrow</h3>
+                    <p class="prayer-text">O God, our help in ages past, our hope for years to come: In this hour of grief, be our shelter from the storm and our dwelling place through the watches of the night. We confess we do not understand Your ways, but we trust in Your goodness. Comfort us with the assurance that neither death nor life, nor things present nor things to come, can separate us from Your love in Christ Jesus our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 23 as Prayer</h3>
+                    <p class="prayer-text">The Lord is my shepherd; I shall not want.<br>
+                    He makes me to lie down in green pastures;<br>
+                    He leads me beside the still waters.<br>
+                    He restores my soul;<br>
+                    He leads me in the paths of righteousness for His name's sake.<br><br>
+                    Yes, though I walk through the valley of the shadow of death,<br>
+                    I will fear no evil; for You are with me;<br>
+                    Your rod and Your staff, they comfort me.<br><br>
+                    You prepare a table before me in the presence of my enemies;<br>
+                    You anoint my head with oil; my cup runs over.<br>
+                    Surely goodness and mercy shall follow me<br>
+                    all the days of my life;<br>
+                    and I will dwell in the house of the Lord forever.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-illness">
+                <article class="prayer">
+                    <h3>Prayer for a Sick Child</h3>
+                    <p class="prayer-text">Heavenly Father, You are the great Physician, and nothing is too hard for You. We lift up this precious child into Your loving hands. We ask for Your healing touch—bring comfort where there is pain, strength where there is weakness, and peace where there is fear. Give wisdom to the doctors and nurses who care for this little one. And give grace to the parents, that they may trust in Your goodness through this trial. We pray in the name of Jesus, who welcomed little children into His arms. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>A Parent's Prayer for Their Sick Child</h3>
+                    <p class="prayer-text">Lord Jesus, You said, "Let the little children come to me." I bring my child to You now, laying them at Your feet. I confess my fear and anxiety, my helplessness and sorrow. But I also confess my faith: that You are good, that You are sovereign, and that You love my child even more than I do. I ask for healing, Lord, if it be Your will. And I ask for grace to trust You, whatever comes. Help me to be a source of comfort and strength for my child. And help us both to know Your presence in this difficult time. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-departed">
+                <article class="prayer">
+                    <h3>Prayer of Commendation</h3>
+                    <p class="prayer-text">Almighty God, into Your hands we commend Your servant, in sure and certain hope of the resurrection to eternal life through Jesus Christ our Lord, who died, was buried, and rose again for us. Grant that we who trust in Him may share with all the faithful departed the joys of Your eternal kingdom. Thanks be to God, who gives us the victory through our Lord Jesus Christ. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for Those Left Behind</h3>
+                    <p class="prayer-text">Merciful Father, You have taught us not to grieve as those who have no hope. Grant us faith to believe that our loved one who has died in Christ is present with You, freed from sin and sorrow. Help us to trust in Your promise that we will be reunited in Your eternal kingdom. Console us in our mourning, strengthen us in our weakness, and fill us with hope as we await the day when every tear will be wiped away. Through Jesus Christ, the Resurrection and the Life. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>John Donne's Prayer</h3>
+                    <p class="prayer-text">Bring us, O Lord God, at our last awakening into the house and gate of heaven, to enter into that gate and dwell in that house, where there shall be no darkness nor dazzling, but one equal light; no noise nor silence, but one equal music; no fears nor hopes, but one equal possession; no ends nor beginnings, but one equal eternity; in the habitations of Your glory and dominion, world without end. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-lust">
+                <article class="prayer">
+                    <h3>Prayer for Purity</h3>
+                    <p class="prayer-text">Almighty God, to You all hearts are open, all desires known, and from You no secrets are hidden: Cleanse the thoughts of my heart by the inspiration of Your Holy Spirit, that I may perfectly love You, and worthily magnify Your holy Name; through Christ our Lord. Amen.</p>
+                    <p class="attribution">— Book of Common Prayer</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for Strength Against Temptation</h3>
+                    <p class="prayer-text">Lord Jesus, You were tempted in every way, yet without sin. You know my weakness, my struggles, the temptations that beset me. I confess that I am powerless to resist in my own strength. Fill me with Your Holy Spirit. Renew my mind with Your truth. Guard my heart with Your peace. Help me to flee from temptation and to run toward You. Create in me a clean heart, O God, and renew a right spirit within me. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Thomas Cranmer's Prayer</h3>
+                    <p class="prayer-text">Grant, O Lord, that what we have said with our lips we may believe in our hearts, and that what we believe in our hearts we may practice in our lives; through Jesus Christ our Lord. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-humility">
+                <article class="prayer">
+                    <h3>Prayer of General Confession</h3>
+                    <p class="prayer-text">Almighty and most merciful Father, we have erred and strayed from Your ways like lost sheep. We have followed too much the devices and desires of our own hearts. We have offended against Your holy laws. We have left undone those things which we ought to have done, and we have done those things which we ought not to have done. But You, O Lord, have mercy upon us. Spare those who confess their faults. Restore those who are penitent, according to Your promises declared unto mankind in Christ Jesus our Lord. And grant, O most merciful Father, for His sake, that we may hereafter live a godly, righteous, and sober life, to the glory of Your holy Name. Amen.</p>
+                    <p class="attribution">— Book of Common Prayer</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for Humility</h3>
+                    <p class="prayer-text">O Lord Jesus Christ, You are meek and humble of heart. Teach me what it means to decrease, that You might increase. Root out my pride, my self-sufficiency, my love of praise. Help me to count others more significant than myself, to consider their interests above my own. Let me find my identity not in my accomplishments but in Your grace. And when I am tempted to think more highly of myself than I ought, remind me that I am dust, and to dust I shall return—but by Your mercy, I shall also rise. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-healing">
+                <article class="prayer">
+                    <h3>Prayer for Healing</h3>
+                    <p class="prayer-text">Almighty God, we pray for Your blessing on those who are sick. Give them courage and patience to endure their suffering, and grant them full recovery if it be Your will. Give skill and wisdom to all who minister to them, that they may be instruments of Your healing power. And help us all to trust in Your goodness and to submit to Your will, knowing that You work all things together for good for those who love You. Through Jesus Christ, the same yesterday, today, and forever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>John Wesley's Prayer for the Sick</h3>
+                    <p class="prayer-text">O Lord, look down from heaven, behold, visit, and relieve Your sick servant. Look upon them with the eyes of Your mercy, give them comfort and sure confidence in You, defend them from the danger of the enemy, and keep them in perpetual peace and safety; through Jesus Christ our Lord. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>A Prayer When Sick</h3>
+                    <p class="prayer-text">Lord, I am weak, but You are strong. I am sick, but You are the Great Physician. I am anxious, but You are the Prince of Peace. I come to You as I am—not with great faith, but with what little faith I have. Increase my faith, Lord. Help me to trust in Your sovereignty, Your wisdom, and Your love. Whether You choose to heal me now or to heal me in eternity, I know that I am Yours and You are mine. Nothing can separate me from Your love. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-morning">
+                <article class="prayer">
+                    <h3>Morning Prayer</h3>
+                    <p class="prayer-text">O Lord, our heavenly Father, Almighty and everlasting God, who has safely brought us to the beginning of this day: Defend us in the same with Your mighty power; and grant that this day we fall into no sin, neither run into any kind of danger; but that all our doings may be ordered by Your governance, to do always that is righteous in Your sight; through Jesus Christ our Lord. Amen.</p>
+                    <p class="attribution">— Book of Common Prayer</p>
+                </article>
+                <article class="prayer">
+                    <h3>John Calvin's Morning Prayer</h3>
+                    <p class="prayer-text">My God, Father and Preserver, who in Your grace has watched over me during this past night and brought me to this new day, grant also that I may spend this day wholly in the worship and service of Your most holy deity. Let me not think, speak, or do a single thing that does not tend to Your glory and the good of my neighbor. Grant that all I do will be to the glory of Your name and the edification of Your church. Hear me, merciful Father, through Jesus Christ Your Son. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer for the Day Ahead</h3>
+                    <p class="prayer-text">Lord God, as I begin this day, I offer myself to You. Take my hands and use them for Your purposes. Take my lips and speak through them. Take my mind and think through it. Take my heart and set it on fire with love for You and for others. Go before me to prepare the way, beside me to encourage me, behind me to protect me, and above me to bless me. In Jesus' name. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="protestant-evening">
+                <article class="prayer">
+                    <h3>Evening Prayer</h3>
+                    <p class="prayer-text">O Lord, support us all the day long, until the shadows lengthen, and the evening comes, and the busy world is hushed, and the fever of life is over, and our work is done. Then in Your mercy, grant us a safe lodging, and a holy rest, and peace at the last. Amen.</p>
+                    <p class="attribution">— John Henry Newman</p>
+                </article>
+                <article class="prayer">
+                    <h3>Prayer of Examen</h3>
+                    <p class="prayer-text">Lord Jesus, as I reflect on this day, I give You thanks for all the ways You have been present with me. I recall the moments of grace—the unexpected kindnesses, the small victories, the beauty I noticed. I also recall the moments of failure—the harsh words, the selfish thoughts, the opportunities for love that I missed. Forgive me, Lord, for the ways I have sinned against You and my neighbor. Grant me a peaceful rest this night, and wake me tomorrow ready to serve You with a joyful heart. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Martin Luther's Evening Prayer</h3>
+                    <p class="prayer-text">I thank You, my heavenly Father, through Jesus Christ, Your dear Son, that You have graciously kept me this day; and I pray that You would forgive me all my sins where I have done wrong, and graciously keep me this night. For into Your hands I commend myself, my body and soul, and all things. Let Your holy angel be with me, that the evil foe may have no power over me. Amen.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hours — A Book of Prayers for the Church</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
