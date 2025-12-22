@@ -13,17 +13,163 @@
     <header>
         <h1>Hours</h1>
         <p class="subtitle">A Book of Prayers</p>
+        <div id="season-banner" class="season-banner">Loading...</div>
+        <div id="office-banner" class="office-banner"></div>
     </header>
 
     <nav class="tradition-tabs">
-        <button class="tradition-tab active" data-tradition="catholic">Catholic</button>
+        <button class="tradition-tab active" data-tradition="office">Daily Office</button>
+        <button class="tradition-tab" data-tradition="catholic">Catholic</button>
         <button class="tradition-tab" data-tradition="byzantine">Byzantine</button>
         <button class="tradition-tab" data-tradition="protestant">Protestant</button>
     </nav>
 
     <main>
+        <!-- Daily Office -->
+        <section class="tradition-content active" id="office">
+            <nav class="topic-tabs office-tabs">
+                <button class="topic-tab office-tab active" data-topic="office-current" data-office="current">Current Hour</button>
+                <button class="topic-tab office-tab" data-topic="office-lauds" data-office="LAUDS">Lauds</button>
+                <button class="topic-tab office-tab" data-topic="office-terce" data-office="TERCE">Terce</button>
+                <button class="topic-tab office-tab" data-topic="office-sext" data-office="SEXT">Sext</button>
+                <button class="topic-tab office-tab" data-topic="office-none" data-office="NONE">None</button>
+                <button class="topic-tab office-tab" data-topic="office-vespers" data-office="VESPERS">Vespers</button>
+                <button class="topic-tab office-tab" data-topic="office-compline" data-office="COMPLINE">Compline</button>
+            </nav>
+
+            <div class="topic-content active" id="office-current">
+                <div class="office-intro">
+                    <p>The Liturgy of the Hours sanctifies the day through prayer at set times. The current hour's prayers are shown below, with seasonal prayers appropriate for this time in the church year.</p>
+                </div>
+                <div id="seasonal-prayers" class="seasonal-prayers"></div>
+                <div id="office-prayers" class="office-prayers"></div>
+            </div>
+
+            <div class="topic-content" id="office-lauds">
+                <article class="prayer">
+                    <h3>Lauds (Morning Prayer)</h3>
+                    <p class="prayer-text">Prayed at dawn, Lauds celebrates the resurrection of Christ and the new light of day.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Invitatory</h3>
+                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen. Alleluia.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 63 (Deus, Deus meus)</h3>
+                    <p class="prayer-text">O God, you are my God; eagerly I seek you;<br>my soul thirsts for you, my flesh faints for you,<br>as in a barren and dry land where there is no water.<br><br>Therefore I have gazed upon you in your holy place,<br>that I might behold your power and your glory.<br><br>For your loving-kindness is better than life itself;<br>my lips shall give you praise.<br><br>So will I bless you as long as I live<br>and lift up my hands in your Name.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Benedictus (Song of Zechariah)</h3>
+                    <p class="prayer-text">Blessed be the Lord, the God of Israel;<br>he has come to his people and set them free.<br><br>He has raised up for us a mighty savior,<br>born of the house of his servant David.<br><br>Through his holy prophets he promised of old,<br>that he would save us from our enemies,<br>from the hands of all who hate us.<br><br>He promised to show mercy to our fathers<br>and to remember his holy covenant.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="office-terce">
+                <article class="prayer">
+                    <h3>Terce (Mid-Morning Prayer)</h3>
+                    <p class="prayer-text">Prayed at the third hour (9 AM), commemorating the descent of the Holy Spirit at Pentecost.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Invitatory</h3>
+                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Hymn: Veni Creator Spiritus</h3>
+                    <p class="prayer-text">Come, Holy Ghost, Creator blest,<br>and in our hearts take up Your rest;<br>come with Your grace and heavenly aid<br>to fill the hearts which You have made.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 119:33-40</h3>
+                    <p class="prayer-text">Teach me, O Lord, the way of your statutes,<br>and I shall keep it to the end.<br><br>Give me understanding, and I shall keep your law;<br>I shall keep it with all my heart.<br><br>Make me go in the path of your commandments,<br>for that is my desire.<br><br>Incline my heart to your decrees<br>and not to unjust gain.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="office-sext">
+                <article class="prayer">
+                    <h3>Sext (Midday Prayer)</h3>
+                    <p class="prayer-text">Prayed at the sixth hour (noon), when Christ was nailed to the cross and darkness covered the land.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Invitatory</h3>
+                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 119:105-112</h3>
+                    <p class="prayer-text">Your word is a lantern to my feet<br>and a light upon my path.<br><br>I have sworn and am determined<br>to keep your righteous judgments.<br><br>I am deeply troubled;<br>preserve my life, O Lord, according to your word.<br><br>Accept, O Lord, the willing tribute of my lips,<br>and teach me your judgments.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Closing Prayer</h3>
+                    <p class="prayer-text">Blessed are you, O Lord, the God of our fathers, creator of the changes of day and night, giving rest to the weary, renewing the strength of those who are spent, bestowing upon us occasions of song in the evening. As you have protected us in the day that is past, so be with us in the coming night; keep us from every sin, every evil, and every fear; for you are our light and salvation, and the strength of our life. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="office-none">
+                <article class="prayer">
+                    <h3>None (Mid-Afternoon Prayer)</h3>
+                    <p class="prayer-text">Prayed at the ninth hour (3 PM), the hour of Christ's death on the cross.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Invitatory</h3>
+                    <p class="prayer-text">O God, come to my assistance.<br>O Lord, make haste to help me.<br><br>Glory to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and will be forever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 121</h3>
+                    <p class="prayer-text">I lift up my eyes to the hills;<br>from where is my help to come?<br><br>My help comes from the Lord,<br>the maker of heaven and earth.<br><br>He will not let your foot be moved<br>and he who watches over you will not fall asleep.<br><br>Behold, he who keeps watch over Israel<br>shall neither slumber nor sleep.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Closing Prayer</h3>
+                    <p class="prayer-text">Lord Jesus Christ, at this hour you mounted the wood of the cross for our salvation. Grant that the light of your love may so enlighten our hearts, that we may willingly die to the world and live for you alone, who with the Father and the Holy Spirit lives and reigns, one God, for ever and ever. Amen.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="office-vespers">
+                <article class="prayer">
+                    <h3>Vespers (Evening Prayer)</h3>
+                    <p class="prayer-text">Prayed at sunset, Vespers gives thanks for the day and welcomes the light of Christ that shines in the darkness.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Phos Hilaron (O Gladsome Light)</h3>
+                    <p class="prayer-text">O gracious Light,<br>pure brightness of the everliving Father in heaven,<br>O Jesus Christ, holy and blessed!<br><br>Now as we come to the setting of the sun,<br>and our eyes behold the vesper light,<br>we sing your praises, O God: Father, Son, and Holy Spirit.<br><br>You are worthy at all times to be praised by happy voices,<br>O Son of God, O Giver of life,<br>and to be glorified through all the worlds.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 141</h3>
+                    <p class="prayer-text">Lord, I call upon you; hasten to me;<br>give ear to my voice when I call to you.<br><br>Let my prayer be set forth in your sight as incense,<br>the lifting up of my hands as the evening sacrifice.<br><br>Set a watch before my mouth, O Lord,<br>and guard the door of my lips.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Magnificat (Song of Mary)</h3>
+                    <p class="prayer-text">My soul magnifies the Lord,<br>and my spirit rejoices in God my Savior,<br>for he has looked with favor on the lowliness of his servant.<br><br>Surely, from now on all generations will call me blessed;<br>for the Mighty One has done great things for me,<br>and holy is his Name.<br><br>He has shown strength with his arm;<br>he has scattered the proud in the thoughts of their hearts.</p>
+                </article>
+            </div>
+
+            <div class="topic-content" id="office-compline">
+                <article class="prayer">
+                    <h3>Compline (Night Prayer)</h3>
+                    <p class="prayer-text">The final prayer of the day, Compline commends the soul to God before sleep.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Confession</h3>
+                    <p class="prayer-text">I confess to almighty God,<br>and to you, my brothers and sisters,<br>that I have sinned through my own fault,<br>in my thoughts and in my words,<br>in what I have done and what I have failed to do;<br>and I ask blessed Mary, ever virgin,<br>all the angels and saints,<br>and you, my brothers and sisters,<br>to pray for me to the Lord our God.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 91</h3>
+                    <p class="prayer-text">He who dwells in the shelter of the Most High,<br>abides under the shadow of the Almighty.<br><br>He shall say to the Lord, "You are my refuge and my stronghold,<br>my God in whom I put my trust."<br><br>He shall deliver you from the snare of the hunter<br>and from the deadly pestilence.<br><br>He shall cover you with his pinions,<br>and you shall find refuge under his wings;<br>his faithfulness shall be a shield and buckler.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Nunc Dimittis (Song of Simeon)</h3>
+                    <p class="prayer-text">Lord, you now have set your servant free<br>to go in peace as you have promised;<br><br>For these eyes of mine have seen the Savior,<br>whom you have prepared for all the world to see:<br><br>A Light to enlighten the nations,<br>and the glory of your people Israel.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Antiphon</h3>
+                    <p class="prayer-text">Guide us waking, O Lord, and guard us sleeping; that awake we may watch with Christ, and asleep we may rest in peace.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Closing</h3>
+                    <p class="prayer-text">Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon all who dwell here; through Jesus Christ our Lord. Amen.<br><br>The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.</p>
+                </article>
+            </div>
+        </section>
+
         <!-- Catholic Tradition -->
-        <section class="tradition-content active" id="catholic">
+        <section class="tradition-content" id="catholic">
             <nav class="topic-tabs">
                 <button class="topic-tab active" data-topic="catholic-grieving">Grieving</button>
                 <button class="topic-tab" data-topic="catholic-illness">Illness of a Child</button>
@@ -92,6 +238,10 @@
                     <h3>Prayer to St. Gerard for a Sick Child</h3>
                     <p class="prayer-text">St. Gerard, who, like the Savior, loved children so tenderly and by your prayers freed many from disease and even from death, listen to us who are pleading for our sick child. We thank God for the great gift of our child and ask Him to restore our child to health if such be His holy will. This favor we beg of you through your love for all children and mothers. Amen.</p>
                 </article>
+                <article class="prayer">
+                    <h3>Isaiah 41:10</h3>
+                    <p class="prayer-text">Fear not, for I am with you;<br>be not dismayed, for I am your God;<br>I will strengthen you, I will help you,<br>I will uphold you with my righteous right hand.</p>
+                </article>
             </div>
 
             <div class="topic-content" id="catholic-departed">
@@ -140,6 +290,14 @@
                     that with Your saints I may praise You<br>
                     forever and ever. Amen.</p>
                 </article>
+                <article class="prayer">
+                    <h3>Psalm 51:10-12</h3>
+                    <p class="prayer-text">Create in me a clean heart, O God,<br>and renew a right spirit within me.<br><br>Cast me not away from your presence,<br>and take not your Holy Spirit from me.<br><br>Restore to me the joy of your salvation,<br>and uphold me with a willing spirit.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Galatians 5:16-17</h3>
+                    <p class="prayer-text">But I say, walk by the Spirit, and you will not gratify the desires of the flesh. For the desires of the flesh are against the Spirit, and the desires of the Spirit are against the flesh, for these are opposed to each other, to keep you from doing the things you want to do.</p>
+                </article>
             </div>
 
             <div class="topic-content" id="catholic-humility">
@@ -174,6 +332,10 @@
                     <h3>Prayer for Humility</h3>
                     <p class="prayer-text">O Lord, I am not worthy that You should come under my roof, but only say the word and my soul shall be healed. Grant me the grace of true humility, that I may know myself as I truly am before You, and love You above all things. Help me to decrease that You may increase in me. Through Christ our Lord. Amen.</p>
                 </article>
+                <article class="prayer">
+                    <h3>Philippians 2:3-8</h3>
+                    <p class="prayer-text">Do nothing from selfish ambition or conceit, but in humility count others more significant than yourselves. Let each of you look not only to his own interests, but also to the interests of others.<br><br>Have this mind among yourselves, which is yours in Christ Jesus, who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross.</p>
+                </article>
             </div>
 
             <div class="topic-content" id="catholic-healing">
@@ -188,6 +350,10 @@
                 <article class="prayer">
                     <h3>Prayer for the Sick</h3>
                     <p class="prayer-text">Father of goodness and love, hear our prayers for the sick members of our community and for all who are in need. Amid mental and physical suffering may they find consolation in your healing presence. Show your mercy as you close wounds, cure illness, make broken bodies whole and free downcast spirits. May these special people find lasting health and deliverance, and so join us in thanking you for all your gifts. We ask this through the Lord Jesus who healed those who believed. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Psalm 103:1-5</h3>
+                    <p class="prayer-text">Bless the Lord, O my soul,<br>and all that is within me, bless his holy name!<br><br>Bless the Lord, O my soul,<br>and forget not all his benefits,<br>who forgives all your iniquity,<br>who heals all your diseases,<br>who redeems your life from the pit,<br>who crowns you with steadfast love and mercy,<br>who satisfies you with good<br>so that your youth is renewed like the eagle's.</p>
                 </article>
             </div>
 
@@ -315,6 +481,10 @@
                 <article class="prayer">
                     <h3>Prayer for a Humble Heart</h3>
                     <p class="prayer-text">O Lord, You are gentle and humble of heart. Teach me true humility, that I may know myself as I am before You, neither exalting myself above others nor despising my neighbor. Help me to see Your image in every person I meet, and to serve them as I would serve You. Grant me a heart that is meek and lowly, free from pride and vainglory, for Yours is the kingdom, and the power, and the glory, forever. Amen.</p>
+                </article>
+                <article class="prayer">
+                    <h3>Matthew 11:28-30</h3>
+                    <p class="prayer-text">Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.</p>
                 </article>
             </div>
 
@@ -463,8 +633,8 @@
                     <p class="prayer-text">Almighty God, we pray for Your blessing on those who are sick. Give them courage and patience to endure their suffering, and grant them full recovery if it be Your will. Give skill and wisdom to all who minister to them, that they may be instruments of Your healing power. And help us all to trust in Your goodness and to submit to Your will, knowing that You work all things together for good for those who love You. Through Jesus Christ, the same yesterday, today, and forever. Amen.</p>
                 </article>
                 <article class="prayer">
-                    <h3>John Wesley's Prayer for the Sick</h3>
-                    <p class="prayer-text">O Lord, look down from heaven, behold, visit, and relieve Your sick servant. Look upon them with the eyes of Your mercy, give them comfort and sure confidence in You, defend them from the danger of the enemy, and keep them in perpetual peace and safety; through Jesus Christ our Lord. Amen.</p>
+                    <h3>Psalm 6 - A Prayer in Affliction</h3>
+                    <p class="prayer-text">O Lord, do not rebuke me in your anger,<br>or discipline me in your wrath.<br><br>Be gracious to me, O Lord, for I am languishing;<br>O Lord, heal me, for my bones are shaking with terror.<br><br>My soul also is struck with terror,<br>while you, O Lord—how long?<br><br>Turn, O Lord, save my life;<br>deliver me for the sake of your steadfast love.</p>
                 </article>
                 <article class="prayer">
                     <h3>A Prayer When Sick</h3>
@@ -510,6 +680,7 @@
         <p>Hours — A Book of Prayers for the Church</p>
     </footer>
 
+    <script src="liturgical.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

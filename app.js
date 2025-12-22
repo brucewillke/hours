@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initTraditionTabs();
     initTopicTabs();
     restoreState();
+    initLiturgicalDisplay();
+    initDailyOffice();
+
+    // Update every minute
+    setInterval(updateTimeBasedContent, 60000);
 });
 
 // Handle tradition (main) tab navigation
@@ -54,6 +59,176 @@ function initTopicTabs() {
 
             // Save state
             saveState();
+        });
+    });
+}
+
+// Initialize liturgical season display
+function initLiturgicalDisplay() {
+    const season = LiturgicalCalendar.getSeason();
+    updateSeasonBanner(season);
+}
+
+// Initialize daily office display
+function initDailyOffice() {
+    const currentHour = DailyOffice.getCurrentHour();
+    updateOfficeBanner(currentHour);
+    updateOfficeContent(currentHour);
+}
+
+// Update the season banner
+function updateSeasonBanner(season) {
+    const banner = document.getElementById('season-banner');
+    if (banner) {
+        banner.textContent = season.fullName || season.name;
+        banner.style.backgroundColor = season.color;
+        // Adjust text color for light backgrounds
+        if (['#ffffff', '#ffd700'].includes(season.color)) {
+            banner.style.color = '#333';
+        } else {
+            banner.style.color = '#fff';
+        }
+    }
+
+    // Update seasonal prayers in the Daily Office tab
+    updateSeasonalPrayers(season);
+}
+
+// Update the office hour banner
+function updateOfficeBanner(hour) {
+    const banner = document.getElementById('office-banner');
+    if (banner) {
+        banner.innerHTML = `<span class="office-name">${hour.name}</span><span class="office-desc">${hour.description}</span>`;
+    }
+
+    // Highlight current hour in the office tabs
+    document.querySelectorAll('.office-tab').forEach(tab => {
+        tab.classList.remove('current');
+        if (tab.dataset.office === hour.key) {
+            tab.classList.add('current');
+        }
+    });
+}
+
+// Update office content based on current hour
+function updateOfficeContent(hour) {
+    const prayers = HourPrayers[hour.key];
+    if (!prayers) return;
+
+    // Update the Daily Office section content
+    const officeContent = document.getElementById('office-prayers');
+    if (officeContent && prayers) {
+        let html = '';
+
+        if (prayers.invitatory) {
+            html += `<div class="office-section">
+                <h4>Invitatory</h4>
+                <p class="prayer-text">${prayers.invitatory.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.confession) {
+            html += `<div class="office-section">
+                <h4>Confession</h4>
+                <p class="prayer-text">${prayers.confession.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.hymn) {
+            html += `<div class="office-section">
+                <h4>Hymn</h4>
+                <p class="prayer-text hymn">${prayers.hymn.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.psalm) {
+            html += `<div class="office-section">
+                <h4>Psalmody</h4>
+                <p class="prayer-text">${prayers.psalm.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.canticle) {
+            html += `<div class="office-section">
+                <h4>Canticle</h4>
+                <p class="prayer-text">${prayers.canticle.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.antiphon) {
+            html += `<div class="office-section">
+                <h4>Antiphon</h4>
+                <p class="prayer-text">${prayers.antiphon.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        if (prayers.closing) {
+            html += `<div class="office-section">
+                <h4>Closing</h4>
+                <p class="prayer-text">${prayers.closing.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        officeContent.innerHTML = html;
+    }
+}
+
+// Update seasonal prayers
+function updateSeasonalPrayers(season) {
+    let seasonKey = 'ORDINARY';
+    if (season.name === 'Advent') seasonKey = 'ADVENT';
+    else if (season.name === 'Christmas') seasonKey = 'CHRISTMAS';
+    else if (season.name === 'Lent') seasonKey = 'LENT';
+    else if (season.name === 'Holy Week') seasonKey = 'HOLY_WEEK';
+    else if (season.name === 'Easter') seasonKey = 'EASTER';
+
+    const prayers = SeasonalPrayers[seasonKey];
+    const seasonalContent = document.getElementById('seasonal-prayers');
+
+    if (seasonalContent && prayers) {
+        let html = `<div class="season-intro">
+            <p class="season-opening">${prayers.opening}</p>
+        </div>`;
+
+        html += `<div class="office-section">
+            <h4>Collect for ${season.fullName || season.name}</h4>
+            <p class="prayer-text">${prayers.collect}</p>
+        </div>`;
+
+        if (prayers.canticle) {
+            html += `<div class="office-section">
+                <h4>Seasonal Canticle</h4>
+                <p class="prayer-text hymn">${prayers.canticle.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        }
+
+        seasonalContent.innerHTML = html;
+    }
+}
+
+// Update all time-based content
+function updateTimeBasedContent() {
+    const season = LiturgicalCalendar.getSeason();
+    const currentHour = DailyOffice.getCurrentHour();
+
+    updateSeasonBanner(season);
+    updateOfficeBanner(currentHour);
+    updateOfficeContent(currentHour);
+}
+
+// Handle office tab clicks
+function initOfficeTabs() {
+    document.querySelectorAll('.office-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const officeKey = this.dataset.office;
+
+            // Update active tab
+            document.querySelectorAll('.office-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update content
+            const hour = { key: officeKey, ...DailyOffice.HOURS[officeKey] };
+            updateOfficeContent(hour);
         });
     });
 }
