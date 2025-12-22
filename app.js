@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateTimeBasedContent, 60000);
 });
 
-// Music sources (public domain from archive.org)
+// Music sources (local files, originally from archive.org public domain)
 const MUSIC_SOURCES = {
-    gregorian: 'https://archive.org/download/GregorianChantMass/02Track2_64kb.mp3',
-    orthodox: 'https://archive.org/download/GregorianChantsMeditationMusic/Cistercian%20chant.mp3',
-    organ: 'https://archive.org/download/a-mighty-fortress-is-our-god-instrumental-hq/A%20Mighty%20Fortress%20Is%20Our%20God%20-%20Instrumental%20%28HQ%29.mp3'
+    gregorian: 'audio/gregorian.mp3',
+    orthodox: 'audio/orthodox.mp3',
+    organ: 'audio/mighty-fortress.mp3'
 };
 
 // Initialize music player
