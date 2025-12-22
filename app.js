@@ -1,5 +1,18 @@
 // Hours - Prayer App JavaScript
 
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/hours/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registered:', registration.scope);
+            })
+            .catch(error => {
+                console.log('ServiceWorker registration failed:', error);
+            });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initTraditionTabs();
     initTopicTabs();

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#8b4513"/>
+  <!-- Inner circle -->
+  <circle cx="256" cy="256" r="220" fill="#faf8f5"/>
+  <!-- Cross -->
+  <rect x="230" y="80" width="52" height="352" rx="8" fill="#8b4513"/>
+  <rect x="120" y="170" width="272" height="52" rx="8" fill="#8b4513"/>
+  <!-- Hour markers (like a clock) -->
+  <circle cx="256" cy="60" r="8" fill="#d4a574"/>
+  <circle cx="256" cy="452" r="8" fill="#d4a574"/>
+  <circle cx="60" cy="256" r="8" fill="#d4a574"/>
+  <circle cx="452" cy="256" r="8" fill="#d4a574"/>
+</svg>
