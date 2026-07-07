@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Music sources (local files, originally from archive.org public domain)
 const MUSIC_SOURCES = {
-    gregorian: 'audio/gregorian.mp3',
-    orthodox: 'audio/orthodox.mp3',
-    organ: 'audio/mighty-fortress.mp3'
+    orthodox: 'audio/orthodox.mp3'
 };
 
 // Initialize music player
@@ -47,7 +45,7 @@ function initMusicPlayer() {
     if (!toggleBtn || !audio) return;
 
     // Set initial source
-    audioSource.src = MUSIC_SOURCES.gregorian;
+    audioSource.src = MUSIC_SOURCES.orthodox;
     audio.load();
 
     // Toggle play/pause
@@ -99,7 +97,7 @@ function initTraditionTabs() {
             document.getElementById(tradition).classList.add('active');
 
             // Update body background class
-            document.body.classList.remove('tradition-catholic', 'tradition-byzantine', 'tradition-protestant');
+            document.body.classList.remove('tradition-byzantine');
             document.body.classList.add('tradition-' + tradition);
 
             // Save state
@@ -335,12 +333,14 @@ function saveState() {
 function restoreState() {
     const savedTradition = localStorage.getItem('hours-tradition');
 
-    if (savedTradition) {
+    if (savedTradition === 'byzantine') {
         // Restore tradition tab
         const traditionTab = document.querySelector(`.tradition-tab[data-tradition="${savedTradition}"]`);
         if (traditionTab) {
             traditionTab.click();
         }
+    } else if (savedTradition) {
+        localStorage.setItem('hours-tradition', 'byzantine');
     }
 
     // Restore topic tabs for each tradition

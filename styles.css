@@ -207,22 +207,10 @@ main::after {
     right: 20px;
 }
 
-/* Catholic - Crucifix on both sides */
-body.tradition-catholic main::before,
-body.tradition-catholic main::after {
-    background-image: url('images/crucifix.svg');
-}
-
 /* Byzantine - Icon on both sides */
 body.tradition-byzantine main::before,
 body.tradition-byzantine main::after {
     background-image: url('images/icon.svg');
-}
-
-/* Protestant - Cross on both sides */
-body.tradition-protestant main::before,
-body.tradition-protestant main::after {
-    background-image: url('images/cross.svg');
 }
 
 /* Hide side images on smaller screens */

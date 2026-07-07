@@ -1,7 +1,7 @@
 {
   "name": "Hours - Daily Prayer",
   "short_name": "Hours",
-  "description": "A prayer app for Catholic, Byzantine, and Protestant traditions with Daily Office and liturgical calendar",
+  "description": "An Eastern Orthodox Byzantine prayer app with the Hours, Psalter, and liturgical calendar",
   "start_url": "/hours/",
   "display": "standalone",
   "background_color": "#faf8f5",

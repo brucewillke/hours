@@ -1,10 +1,10 @@
 # Hours
 
-A prayer book web app for high church traditions, featuring pre-written prayers from Catholic, Byzantine, and Protestant traditions, organized by topic.
+A prayer book web app featuring pre-written prayers from the Eastern Orthodox Byzantine tradition, organized by topic.
 
 ## Features
 
-- Three tradition tabs: Catholic, Byzantine, Protestant
+- Eastern Orthodox Byzantine prayer section
 - Topic categories: Grieving, Illness of a Child, For the Departed, Against Lust, For Humility, For Healing, Morning Prayers, Evening Prayers
 - Responsive design for mobile and desktop
 - State persistence (remembers your last viewed tradition/topic)
